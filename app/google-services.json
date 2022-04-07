@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "394805610830",
+    "project_id": "easemyride-b0bce",
+    "storage_bucket": "easemyride-b0bce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394805610830:android:9e9380e87ada114af0b61f",
+        "android_client_info": {
+          "package_name": "com.example.easemyride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394805610830-j5v2cctrhk1vt0okqktava6f2rd8aq35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4BP7AbxyZf8mdSIz5eMOxgeNfZgbpQvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394805610830-j5v2cctrhk1vt0okqktava6f2rd8aq35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

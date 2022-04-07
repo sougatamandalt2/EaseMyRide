@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EaseMyRide</string>
+
+
+    <string name="facebook_app_id">5048461518544955</string>
+    <string name="fb_login_protocol_scheme">fb5048461518544955</string>
+    <string name="facebook_client_token">a03cc3424723e3f5a0dd5a8555b603dd</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+
+</resources>

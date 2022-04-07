@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/email.xml" value="0.20092592592592592" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/email_white.xml" value="0.20092592592592592" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/menu_icon_foreground.xml" value="0.20555555555555555" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape.xml" value="0.19166666666666668" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape03.xml" value="0.19166666666666668" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape04.xml" value="0.18703703703703703" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape07.xml" value="0.240625" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape09.xml" value="0.240625" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape2.xml" value="0.19166666666666668" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape8.xml" value="1.2821428571428573" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape_05.xml" value="0.1787037037037037" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape_6.xml" value="0.20092592592592592" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/shape_9.xml" value="0.240625" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_cng.xml" value="0.22447916666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_diesel.xml" value="0.22447916666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_forget_password.xml" value="0.22447916666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_fuel.xml" value="0.22447916666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_fullscreen.xml" value="0.21041666666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_home_page.xml" value="0.22447916666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_homepage.xml" value="0.22447916666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_main.xml" value="0.21041666666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_map.xml" value="0.22447916666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_mechanic.xml" value="0.22239583333333332" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_medical.xml" value="0.22447916666666667" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_petrol.xml" value="0.25" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_profile.xml" value="0.22239583333333332" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_registration.xml" value="0.25" />
+        <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/layout/activity_towtruck.xml" value="0.22239583333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
