@@ -4,91 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".petrolActivity">
-
-    <RelativeLayout
-        android:id="@+id/rl_login"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/shape07">
-
-        <TextView
-            android:id="@+id/tv_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="20dp"
-            android:fontFamily="serif-monospace"
-            android:gravity="center"
-            android:text="Place your order"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
+    tools:context=".petrolActivity"
+    android:background="@drawable/shape09">
 
     <RelativeLayout
         android:id="@+id/rl_map_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl_login"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:background="#000000"
+        android:background="#FFFFFF"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
 
-        <RelativeLayout
-            android:id="@+id/rl_map"
+        <EditText
+            android:id="@+id/edt_address"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/shape8">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape2"
+            android:drawablePadding="10dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:drawableStart="@drawable/location"
+            android:hint="Your Current Location"
+            android:textColor="@color/white"
+            android:textSize="17dp"/>
 
-            <EditText
-                android:id="@+id/edt_location"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:hint="Your Current Location"
-                android:padding="10dp" />
-            <ImageButton
-                android:id="@+id/btn_loc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/password"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="15dp"/>
+        <ImageButton
+            android:id="@+id/btn_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/target"
+            android:baseline="@+id/edt_address"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:padding="8dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape2"/>
 
-        </RelativeLayout>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fr_map"
+            class="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp" />
 
         <TextView
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_map"
+            android:layout_below="@+id/fr_map"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:layout_marginTop="-60dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/shape_9"
-            android:paddingLeft="20dp"
+            android:paddingLeft="5dp"
             android:paddingTop="5dp"
-            android:paddingRight="20dp"
+            android:paddingRight="5dp"
             android:paddingBottom="5dp"
             android:text="Rs. 100 per Litre"
-            android:textSize="22dp"
+            android:textSize="15dp"
             android:textStyle="bold" />
 
         <TextView
@@ -97,10 +84,10 @@
             android:layout_below="@id/tv_price"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
-            android:fontFamily="monospace"
+            android:visibility="gone"
             android:text="( Based On Your Location )"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:textSize="12dp"
+            android:textColor="#FFFFFF" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -112,7 +99,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/shape09"
+        android:background="@color/white"
         android:paddingTop="10dp"
         android:paddingBottom="20dp">
 
@@ -121,23 +108,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Choose the quantity in Litre"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edt_quantity"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/shape2"
-            android:drawableEnd="@drawable/dropdown_white"
+            android:drawableEnd="id/"
             android:hint="Quantity"
             android:paddingLeft="20dp"
-            android:paddingRight="10dp" />
+            android:paddingTop="7dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="7dp" />
+
+        <Spinner
+            android:id="@+id/sp_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/edt_quantity"
+            android:spinnerMode="dropdown" />
 
 
         <TextView
@@ -218,7 +215,7 @@
             android:paddingTop="10dp"
             android:paddingRight="30dp"
             android:paddingBottom="10dp"
-            android:text="$10"
+            android:text="   "
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -231,7 +228,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:text="CONFIRM"
-        android:textSize="20dp"/>
+        android:background="@drawable/shape03"
+        android:padding="10dp"
+        android:text="  CONFIRM  "
+        android:textColor="@color/white"
+        android:textSize="20dp" />
 
 </RelativeLayout>

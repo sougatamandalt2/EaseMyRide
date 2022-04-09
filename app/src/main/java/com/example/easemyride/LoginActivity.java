@@ -2,7 +2,9 @@ package com.example.easemyride;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentContainerView;
 
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -46,8 +48,8 @@ public class LoginActivity extends AppCompatActivity {
 //    private LoginButton login_button;
 //    private CallbackManager callbackManager;
 
-    private GoogleSignInClient mGoogleSignInClient;
-    private static int RC_SIGN_IN=100;
+//    private GoogleSignInClient mGoogleSignInClient;
+//    private static int RC_SIGN_IN=100;
 
     private static final String EMAIL = "email";
 
