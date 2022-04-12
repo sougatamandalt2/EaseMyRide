@@ -1,13 +1,13 @@
 package com.example.easemyride;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class fuelActivity extends AppCompatActivity {
     private TextView tv_petrol,tv_diesel,tv_cng;
