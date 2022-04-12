@@ -3,6 +3,7 @@ package com.example.easemyride;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -63,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
         String ue=preferences.getString("userEmail","");
         String up=preferences.getString("userPassword","");
+        tv_forgetpassword.setPaintFlags(tv_forgetpassword.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         if(!TextUtils.isEmpty(ue) && !TextUtils.isEmpty(up)){
             edt_email.setText(ue);
