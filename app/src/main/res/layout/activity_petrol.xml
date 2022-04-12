@@ -7,231 +7,230 @@
     tools:context=".petrolActivity"
     android:background="@drawable/shape09">
 
-    <RelativeLayout
-        android:id="@+id/rl_map_head"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="#FFFFFF"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/rl_map_head"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="5dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:paddingTop="10dp">-->
 
-        <EditText
-            android:id="@+id/edt_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/shape2"
-            android:drawablePadding="10dp"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:drawableStart="@drawable/location"
-            android:hint="Your Current Location"
-            android:textColor="@color/white"
-            android:textSize="17dp"/>
+<!--        <EditText-->
+<!--            android:id="@+id/edt_address"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@drawable/shape2"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:paddingBottom="8dp"-->
+<!--            android:paddingTop="8dp"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:drawableStart="@drawable/location"-->
+<!--            android:hint="Your Current Location"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="17dp"/>-->
 
-        <ImageButton
-            android:id="@+id/btn_loc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/target"
-            android:baseline="@+id/edt_address"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:padding="8dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/shape2"/>
+<!--        <ImageButton-->
+<!--            android:id="@+id/btn_loc"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/target"-->
+<!--            android:baseline="@+id/edt_address"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:padding="8dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:background="@drawable/shape2"/>-->
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fr_map"
-            class="com.google.android.gms.maps.MapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp" />
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/fr_map"-->
+<!--            class="com.google.android.gms.maps.MapFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="270dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="10dp" />-->
 
-        <TextView
-            android:id="@+id/tv_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fr_map"
-            android:layout_alignParentEnd="true"
-            android:visibility="gone"
-            android:layout_marginTop="-60dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/shape_9"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
-            android:text="Rs. 100 per Litre"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_price"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/fr_map"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_marginTop="-60dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:background="@drawable/shape_9"-->
+<!--            android:paddingLeft="5dp"-->
+<!--            android:paddingTop="5dp"-->
+<!--            android:paddingRight="5dp"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:text="Rs. 100 per Litre"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_price"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"
-            android:visibility="gone"
-            android:text="( Based On Your Location )"
-            android:textSize="12dp"
-            android:textColor="#FFFFFF" />
-    </RelativeLayout>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/tv_price"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:visibility="gone"-->
+<!--            android:text="( Based On Your Location )"-->
+<!--            android:textSize="12dp"-->
+<!--            android:textColor="#FFFFFF" />-->
+<!--    </RelativeLayout>-->
 
-    <RelativeLayout
-        android:id="@+id/rl_quantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_map_head"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/white"
-        android:paddingTop="10dp"
-        android:paddingBottom="20dp">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/rl_quantity"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/rl_map_head"-->
+<!--        android:layout_marginStart="5dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingBottom="20dp">-->
 
-        <TextView
-            android:id="@+id/tv_heading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Choose the quantity in Litre"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_heading"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Choose the quantity in Litre"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold" />-->
 
-        <EditText
-            android:id="@+id/edt_quantity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/shape2"
-            android:drawableEnd="id/"
-            android:hint="Quantity"
-            android:paddingLeft="20dp"
-            android:paddingTop="7dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="7dp" />
+<!--        <EditText-->
+<!--            android:id="@+id/edt_quantity"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:background="@drawable/shape2"-->
+<!--            android:hint="Quantity"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:paddingTop="7dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:paddingBottom="7dp" />-->
 
-        <Spinner
-            android:id="@+id/sp_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/edt_quantity"
-            android:spinnerMode="dropdown" />
-
-
-        <TextView
-            android:id="@+id/tv_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/edt_quantity"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="serif"
-            android:text="Fuel price :                  "
-            android:textSize="15dp"
-            android:textStyle="bold" />
+<!--&lt;!&ndash;        <Spinner&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/sp_menu"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_toEndOf="@+id/edt_quantity"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:spinnerMode="dropdown" />&ndash;&gt;-->
 
 
-        <TextView
-            android:id="@+id/tv_delivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_total"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="serif"
-            android:text="Delivery fee :              "
-            android:textSize="15dp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_total"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/edt_quantity"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:fontFamily="serif"-->
+<!--            android:text="Fuel price :                  "-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/tv_delPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_total"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_toRightOf="@+id/tv_delivery"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
-            android:paddingRight="30dp"
-            android:paddingBottom="10dp"
-            android:text="$10"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
-        <!--        <TextView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_below="@+id/tv_delivery"-->
-        <!--            android:layout_marginTop="30dp"-->
-        <!--            android:gravity="center"-->
-        <!--            android:text="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;"-->
-        <!--            android:textColor="@color/black"-->
-        <!--            android:textStyle="bold" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/tv_delivery"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/tv_total"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:fontFamily="serif"-->
+<!--            android:text="Delivery fee :              "-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/tv_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_delivery"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="Total Amount : "
-            android:textSize="20dp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_delPrice"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/tv_total"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:layout_toRightOf="@+id/tv_delivery"-->
+<!--            android:paddingLeft="30dp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingRight="30dp"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            android:text="$10"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/tv_amtPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tv_amount"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/shape_6"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
-            android:paddingRight="30dp"
-            android:paddingBottom="10dp"
-            android:text="   "
-            android:textSize="20dp"
-            android:textStyle="bold" />
+<!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_below="@+id/tv_delivery"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_marginTop="30dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:gravity="center"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:text="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textColor="@color/black"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textStyle="bold" />&ndash;&gt;-->
 
-    </RelativeLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/tv_amount"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/tv_delivery"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="Total Amount : "-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold" />-->
 
-    <Button
-        android:id="@+id/btn_confirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/shape03"
-        android:padding="10dp"
-        android:text="  CONFIRM  "
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_amtPrice"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignBaseline="@+id/tv_amount"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@drawable/shape_6"-->
+<!--            android:paddingLeft="30dp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingRight="30dp"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            android:text="   "-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--    </RelativeLayout>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_confirm"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="40dp"-->
+<!--        android:background="@drawable/shape03"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="  CONFIRM  "-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20dp" />-->
 
 </RelativeLayout>
