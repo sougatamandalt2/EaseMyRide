@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentContainerView;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -104,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
 
 //        String name=givename();
 
-
+        tv_forgetpassword.setPaintFlags(tv_forgetpassword.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tv_newuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
