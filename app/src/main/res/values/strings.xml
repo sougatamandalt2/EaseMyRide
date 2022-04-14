@@ -11,5 +11,15 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="map_key" translatable="false">AIzaSyDovv2jiddBLyex9D0DGxqA6V1USfRBRds</string>
 
+    <string-array name="quantities">
+
+        <item>1</item>
+        <item>5</item>
+        <item>8</item>
+        <item>10</item>
+        <item>15</item>
+
+    </string-array>
+
 
 </resources>

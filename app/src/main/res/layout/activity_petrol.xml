@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".petrolActivity"
-    android:background="#FFF6F6">
+    android:background="@drawable/shape09">
 
     <RelativeLayout
         android:id="@+id/rl_map_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/shape09"
         android:paddingBottom="5dp"
         android:paddingTop="5dp">
@@ -19,14 +22,17 @@
             android:id="@+id/fr_map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            />
+            android:layout_height="270dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp" />
 
         <EditText
             android:id="@+id/edt_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/shape2"
@@ -38,8 +44,7 @@
             android:paddingRight="10dp"
             android:paddingBottom="8dp"
             android:textColor="@color/white"
-            android:textSize="17dp"
-            android:layout_marginTop="10dp"/>
+            android:textSize="17dp" />
 
         <ImageButton
             android:id="@+id/btn_loc"
@@ -49,9 +54,8 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:padding="8dp"
-
-            android:background="@drawable/shape2"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape2"/>
 
         <TextView
             android:id="@+id/tv_price"
@@ -88,9 +92,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_map_head"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:background="#D3CECE"
+        android:background="@color/white"
         android:paddingTop="10dp"
         android:paddingBottom="20dp">
 
@@ -105,14 +110,14 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/edt_quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="30dp"
-            android:hint="Quantity"
+            android:text="Quantity"
             android:paddingLeft="20dp"
             android:paddingTop="7dp"
             android:paddingRight="10dp"
@@ -122,7 +127,9 @@
             android:id="@+id/sp_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/edt_quantity"
+            android:layout_alignBottom="@+id/edt_quantity"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentEnd="true"
             android:spinnerMode="dropdown" />
 
 
@@ -133,12 +140,22 @@
             android:layout_below="@+id/edt_quantity"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="100dp"
             android:fontFamily="serif"
-            android:text="Fuel price :                  "
+            android:text="Fuel price :"
             android:textSize="15dp"
-            android:textStyle="bold"
-            android:visibility="invisible" />
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_fuelPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_quantity"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@+id/tv_total"
+            android:layout_marginRight="40dp"
+            android:text="$10"
+            android:textSize="15dp" />
 
 
         <TextView
@@ -148,29 +165,22 @@
             android:layout_below="@+id/tv_total"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="100dp"
             android:fontFamily="serif"
-            android:text="Delivery fee :              "
+            android:text="Delivery fee :"
             android:textSize="15dp"
-            android:textStyle="bold"
-            android:visibility="invisible" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_delPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_total"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_toRightOf="@+id/tv_delivery"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
-            android:paddingRight="30dp"
-            android:paddingBottom="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@+id/tv_delivery"
+            android:layout_marginRight="40dp"
             android:text="$10"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:visibility="invisible" />
+            android:textSize="15dp" />
 
         <!--        <TextView-->
         <!--            android:layout_width="match_parent"-->
@@ -191,8 +201,7 @@
             android:layout_marginTop="20dp"
             android:text="Total Amount : "
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:visibility="invisible" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_amtPrice"
@@ -210,8 +219,7 @@
             android:paddingBottom="10dp"
             android:text="   "
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:visibility="invisible" />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
