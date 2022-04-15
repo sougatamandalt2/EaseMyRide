@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_order"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/petrol"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Petrol"
+            android:layout_toRightOf="@+id/iv_order"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:id="@+id/tv_fuelPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuel Price: 200"
+            android:layout_toRightOf="@+id/iv_order"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/tv_delPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery Price: 20"
+            android:layout_toRightOf="@+id/tv_fuelPrice"
+            android:layout_marginLeft="40dp"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/tv_totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price: 220"
+            android:layout_toRightOf="@+id/iv_order"
+            android:layout_below="@+id/tv_fuelPrice"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity: 8"
+            android:layout_toRightOf="@+id/tv_totalPrice"
+            android:layout_below="@+id/tv_fuelPrice"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

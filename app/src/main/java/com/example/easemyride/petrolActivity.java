@@ -41,6 +41,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -60,6 +61,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
     private ImageButton btn_loc;
     private Button btn_confirm,btn_map,btn_checkout;
     private Spinner sp_menu;
+    private FloatingActionButton btn_orders;
 
     public Double allTotalPrice=0.00;
 
@@ -79,6 +81,8 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
     FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
 
+    public String sp_value;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +97,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
         tv_delPrice=findViewById(R.id.tv_delPrice);
         tv_amtPrice=findViewById(R.id.tv_amtPrice);
         btn_confirm=findViewById(R.id.btn_confirm);
+        btn_orders=findViewById(R.id.btn_orders);
 //        btn_checkout=findViewById(R.id.btn_checkout);
 
         firebaseAuth=FirebaseAuth.getInstance();
@@ -115,9 +120,9 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
         sp_menu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String value=String.valueOf(adapterView.getItemAtPosition(i));
+                sp_value=String.valueOf(adapterView.getItemAtPosition(i));
 
-                int fuel_price=Integer.parseInt(value)*100;
+                int fuel_price=Integer.parseInt(sp_value)*100;
                 tv_fuelPrice.setText(String.valueOf(fuel_price));
 
                 int amt=Integer.parseInt(tv_fuelPrice.getText().toString().trim())+Integer.parseInt(tv_delPrice.getText().toString().trim());
@@ -130,136 +135,178 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
             }
         });
 
-//        btn_confirm.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
+        btn_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String title="Fuel:Petrol";
+                String finalPrice=tv_amtPrice.getText().toString().trim().replace("$","");
+                String delPrice=tv_delPrice.getText().toString().trim().replace("$","");
+                String quantity=sp_value;
+                addToCart(title,delPrice,quantity,finalPrice);
+
 //                makeOrder(view);
-//
-//
-//            }
-//        });
+
+
+            }
+        });
+
+        btn_orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                makeOrder(view);
+
+                submitOrder();
+
+                startActivity(new Intent(petrolActivity.this,OrdersActivity.class));
+            }
+        });
 
     }
 
-//    private void makeOrder(View view) {
-//        orderItemList=new ArrayList<>();
+    private int orderID=0;
+    private void addToCart(String title, String delPrice, String quantity, String finalPrice) {
+
+        EasyDB easyDB=EasyDB.init(petrolActivity.this,"ITEMS_DB")
+                .addColumn(new Column("ORDER_ID",new String[]{"text","unique"}))
+                .addColumn(new Column("ITEM_PID",new String[]{"text","not null"}))
+                .addColumn(new Column("ORDER_Name",new String[]{"text","not null"}))
+                .addColumn(new Column("ORDER_Rate",new String[]{"text","not null"}))
+                .addColumn(new Column("Order_totalPrice",new String[]{"text","not null"}))
+                .addColumn(new Column("ORDER_quantity",new String[]{"text","not null"}))
+                .doneTableColumn();
+
+        orderID++;
+        boolean b=easyDB.addData("ORDER_ID",orderID)
+                .addData("ORDER_Name",title)
+                .addData("Order_totalPrice",finalPrice)
+                .addData("ORDER_quantity",quantity)
+                .doneDataAdding();
+
+        Toast.makeText(petrolActivity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
+
+    }
+
+    private void makeOrder(View view) {
+        orderItemList=new ArrayList<>();
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(petrolActivity.this);
+        builder.setView(view);
+
+        EasyDB easyDB=EasyDB.init(petrolActivity.this,"ORDERS_DB")
+                .addColumn(new Column("ORDER_ID",new String[]{"text","unique"}))
+                .addColumn(new Column("PRODUCT_PID",new String[]{"text","not null"}))
+                .addColumn(new Column("PRODUCT_Name",new String[]{"text","not null"}))
+                .addColumn(new Column("PRODUCT_Rate",new String[]{"text","not null"}))
+                .addColumn(new Column("PRODUCT_TotalPrice",new String[]{"text","not null"}))
+                .addColumn(new Column("PRODUCT_quantity",new String[]{"text","not null"}))
+                .doneTableColumn();
+
+        Cursor res=easyDB.getAllData();
+        while(res.moveToNext()) {
+            String id = res.getString(1);
+            String pId = res.getString(2);
+            String name = res.getString(3);
+            String rate = res.getString(4);
+            String totalCost = res.getString(5);
+            String quantity = res.getString(6);
+
+            allTotalPrice=allTotalPrice+Double.parseDouble(totalCost);
+
+            modelOrders modelOrders=new modelOrders(""+id,""+pId,""+name,""+rate,""+totalCost,""+quantity);
+
+            orderItemList.add(modelOrders);
+
+            AlertDialog dialog=builder.create();
+            dialog.show();
+
+            dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialogInterface) {
+                    allTotalPrice=0.00;
+                }
+            });
+
+            btn_checkout.setVisibility(View.VISIBLE);
+
+            btn_checkout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(orderItemList.size()==0){
+                        Toast.makeText(petrolActivity.this, "No items in Cart", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    submitOrder();
+                }
+            });
+
+        }
+
+    }
 //
-//        AlertDialog.Builder builder=new AlertDialog.Builder(petrolActivity.this);
-//        builder.setView(view);
-//
-//        EasyDB easyDB=EasyDB.init(petrolActivity.this,"ORDERS_DB")
-//                .addColumn(new Column("ORDER_ID",new String[]{"text","unique"}))
-//                .addColumn(new Column("PRODUCT_PID",new String[]{"text","not null"}))
-//                .addColumn(new Column("PRODUCT_Name",new String[]{"text","not null"}))
-//                .addColumn(new Column("PRODUCT_Rate",new String[]{"text","not null"}))
-//                .addColumn(new Column("PRODUCT_TotalPrice",new String[]{"text","not null"}))
-//                .addColumn(new Column("PRODUCT_quantity",new String[]{"text","not null"}))
-//                .doneTableColumn();
-//
-//        Cursor res=easyDB.getAllData();
-//        while(res.moveToNext()) {
-//            String id = res.getString(1);
-//            String pId = res.getString(2);
-//            String name = res.getString(3);
-//            String rate = res.getString(4);
-//            String totalCost = res.getString(5);
-//            String quantity = res.getString(6);
-//
-//            allTotalPrice=allTotalPrice+Double.parseDouble(totalCost);
-//
-//            modelOrders modelOrders=new modelOrders(""+id,""+pId,""+name,""+rate,""+totalCost,""+quantity);
-//
-//            orderItemList.add(modelOrders);
-//
-//            AlertDialog dialog=builder.create();
-//            dialog.show();
-//
-//            dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-//                @Override
-//                public void onCancel(DialogInterface dialogInterface) {
-//                    allTotalPrice=0.00;
-//                }
-//            });
-//
-//            btn_checkout.setVisibility(View.VISIBLE);
-//
-//            btn_checkout.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    if(orderItemList.size()==0){
-//                        Toast.makeText(petrolActivity.this, "No items in Cart", Toast.LENGTH_SHORT).show();
-//                        return;
-//                    }
-//                    submitOrder();
-//                }
-//            });
-//
-//        }
-//
-//    }
-//
-//    private void submitOrder() {
-//
-//        progressDialog.setMessage("Placing Order");
-//        progressDialog.show();
-//
-//        String timeStamp=""+System.currentTimeMillis();
-//
-//        String totalPrice=tv_amtPrice.getText().toString().trim().replace("$","");
-//
-//        String lat=String.valueOf(latitude);
-//        String lon=String.valueOf(longitude);
-//
-//        HashMap<String,String > hashMap=new HashMap<>();
-//        hashMap.put("orderID",timeStamp);
-//        hashMap.put("orderTime",timeStamp);
-//        hashMap.put("orderStatus","In Progress");
-//        hashMap.put("orderCost",totalPrice);
-//        hashMap.put("orderBy",firebaseAuth.getUid());
-//        hashMap.put("orderTo","Agent01");
-//        hashMap.put("latitude",lat);
-//        hashMap.put("longitude",lon);
-//
-//        final DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Customers").child("Orders");
-//        reference.child(timeStamp).setValue(hashMap)
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void unused) {
-//                        for(int i=0;i<orderItemList.size();i++){
-//                            String pId=orderItemList.get(i).getPid();
-//                            String name=orderItemList.get(i).getName();
-//                            String price=orderItemList.get(i).getRate();
-//                            String cost=orderItemList.get(i).getTotalCost();
-//                            String quantity=orderItemList.get(i).getQuantity();
-//
-//                            HashMap<String,String > hashMap1=new HashMap<>();
-//                            hashMap1.put("pId",pId);
-//                            hashMap1.put("name",name);
-//                            hashMap1.put("price",price);
-//                            hashMap1.put("cost",cost);
-//                            hashMap1.put("quantity",quantity);
-//
-//                            reference.child(timeStamp).child("items").child(pId).setValue(hashMap1);
-//                        }
-//                        progressDialog.dismiss();
-//                        Toast.makeText(petrolActivity.this, "Order Placed....", Toast.LENGTH_SHORT).show();
-//
-////                        Intent intent=new Intent(petrolActivity.this,OrderDetailsActivity.class);
-////                        intent.putExtra("orderTo",shopuid);
-////                        intent.putExtra("orderID",timeStamp);
-////                        startActivity(intent);
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        progressDialog.dismiss();
-//                        Toast.makeText(petrolActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//
-//    }
+    private void submitOrder() {
+
+        progressDialog.setMessage("Placing Order");
+        progressDialog.show();
+
+        String timeStamp=""+System.currentTimeMillis();
+
+        String totalPrice=tv_amtPrice.getText().toString().trim().replace("$","");
+
+        String lat=String.valueOf(latitude);
+        String lon=String.valueOf(longitude);
+
+        HashMap<String,String > hashMap=new HashMap<>();
+        hashMap.put("orderID",timeStamp);
+        hashMap.put("orderTime",timeStamp);
+        hashMap.put("orderStatus","In Progress");
+        hashMap.put("orderTitle","Petrol");
+        hashMap.put("orderCost",totalPrice);
+        hashMap.put("orderBy",firebaseAuth.getUid());
+        hashMap.put("orderTo","Agent01");
+        hashMap.put("latitude",lat);
+        hashMap.put("longitude",lon);
+
+        final DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Customer").child(firebaseAuth.getUid()).child("Orders");
+        reference.child(timeStamp).setValue(hashMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        for(int i=0;i<orderItemList.size();i++){
+                            String pId=orderItemList.get(i).getPid();
+                            String name=orderItemList.get(i).getName();
+                            String price=orderItemList.get(i).getRate();
+                            String cost=orderItemList.get(i).getTotalCost();
+                            String quantity=orderItemList.get(i).getQuantity();
+
+                            HashMap<String,String > hashMap1=new HashMap<>();
+                            hashMap1.put("pId",pId);
+                            hashMap1.put("name",name);
+                            hashMap1.put("price",price);
+                            hashMap1.put("cost",cost);
+                            hashMap1.put("quantity",quantity);
+
+                            reference.child(timeStamp).child("items").child(pId).setValue(hashMap1);
+                        }
+                        progressDialog.dismiss();
+                        Toast.makeText(petrolActivity.this, "Order Placed....", Toast.LENGTH_SHORT).show();
+
+//                        Intent intent=new Intent(petrolActivity.this,OrderDetailsActivity.class);
+//                        intent.putExtra("orderTo",shopuid);
+//                        intent.putExtra("orderID",timeStamp);
+//                        startActivity(intent);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
+                        Toast.makeText(petrolActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+    }
 
     private void updateUI() {
 
