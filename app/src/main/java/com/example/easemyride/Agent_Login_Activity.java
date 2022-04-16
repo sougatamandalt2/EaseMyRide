@@ -24,12 +24,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class LoginActivity extends AppCompatActivity {
-    private RelativeLayout rl_login;
-    private ImageView iv_logo,iv_gimg,iv_fimg;
-    private TextView tv_label,tv_loginagent,tv_loginby,tv_newuser,tv_forgetpassword;
+public class Agent_Login_Activity extends AppCompatActivity {
+
+    private TextView tv_forgetpassword;
     private EditText edt_email,edt_password;
-    private Button btn_login;
+    private Button btn_agent_login;
 //    private LoginButton login_button;
 //    private CallbackManager callbackManager;
 
@@ -43,16 +42,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        rl_login=findViewById(R.id.rl_login);
-        iv_logo=findViewById(R.id.iv_logo);
-        tv_label=findViewById(R.id.tv_label);
+        setContentView(R.layout.activity_agent_login);
         edt_email=findViewById(R.id.edt_email);
         edt_password=findViewById(R.id.edt_password);
-        btn_login=findViewById(R.id.btn_login);
-        tv_loginagent=findViewById(R.id.tv_loginagent);
-
-        tv_newuser=findViewById(R.id.tv_newuser);
+        btn_agent_login=findViewById(R.id.btn_agent_login);
         tv_forgetpassword=findViewById(R.id.tv_forgetpassword);
 
 
@@ -73,27 +66,17 @@ public class LoginActivity extends AppCompatActivity {
 
 //        String name=givename();
 
-        tv_loginagent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,Agent_Login_Activity.class));
-            }
-        });
-        tv_newuser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,RegistrationActivity.class));
-            }
-        });
+
+
 
         tv_forgetpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,ForgetPasswordActivity.class));
+                startActivity(new Intent(Agent_Login_Activity.this,ForgetPasswordActivity.class));
             }
         });
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
+        btn_agent_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -150,12 +133,12 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            Toast.makeText(LoginActivity.this, "Invalid email", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Agent_Login_Activity.this, "Invalid email", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if(password.length()<8){
-            Toast.makeText(LoginActivity.this, "Password too short", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Agent_Login_Activity.this, "Password too short", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -165,14 +148,14 @@ public class LoginActivity extends AppCompatActivity {
                     public void onSuccess(AuthResult authResult) {
                         progressDialog.dismiss();
 
-                        startActivity(new Intent(LoginActivity.this,HomepageActivity.class));
+                        startActivity(new Intent(Agent_Login_Activity.this,Agent_Homepage.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         progressDialog.dismiss();
-                        Toast.makeText(LoginActivity.this, "Incorrect email or password, try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Agent_Login_Activity.this, "Incorrect email or password, try again", Toast.LENGTH_SHORT).show();
                     }
                 });
 

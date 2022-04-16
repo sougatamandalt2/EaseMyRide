@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".petrolActivity"
-    android:background="@drawable/shape09">
+    android:background="#ffffff">
 
     <RelativeLayout
         android:id="@+id/rl_map_head"
@@ -14,7 +14,6 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/shape09"
         android:paddingBottom="5dp"
         android:paddingTop="5dp">
 
@@ -22,18 +21,16 @@
             android:id="@+id/fr_map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_height="290dp"
+            />
 
         <EditText
             android:id="@+id/edt_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/shape2"
             android:drawableStart="@drawable/location"
@@ -95,7 +92,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:background="@color/white"
+        android:background="#D7EFEF"
         android:paddingTop="10dp"
         android:paddingBottom="20dp">
 
@@ -115,21 +112,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="30dp"
-            android:text="Quantity"
+            android:background="@drawable/shape2"
             android:paddingLeft="20dp"
-            android:paddingTop="7dp"
+            android:paddingTop="10dp"
             android:paddingRight="10dp"
-            android:paddingBottom="7dp" />
+            android:paddingBottom="7dp"
+            android:text="Quantity" />
 
         <Spinner
             android:id="@+id/sp_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/edt_quantity"
-            android:layout_marginRight="30dp"
             android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
             android:spinnerMode="dropdown" />
 
 
@@ -151,8 +149,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edt_quantity"
-            android:layout_alignParentEnd="true"
             android:layout_alignBaseline="@+id/tv_total"
+            android:layout_alignParentEnd="true"
             android:layout_marginRight="40dp"
             android:text="$10"
             android:textSize="15dp" />
@@ -176,8 +174,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_total"
-            android:layout_alignParentEnd="true"
             android:layout_alignBaseline="@+id/tv_delivery"
+            android:layout_alignParentEnd="true"
             android:layout_marginRight="40dp"
             android:text="$10"
             android:textSize="15dp" />
@@ -229,12 +227,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/shape03"
         android:padding="10dp"
-        android:text="  CONFIRM  "
+        android:text="Place Order"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_orders"

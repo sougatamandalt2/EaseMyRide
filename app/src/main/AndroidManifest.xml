@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EaseMyRide">
         <activity
+            android:name=".Agent_Homepage"
+            android:exported="false" />
+        <activity
+            android:name=".Agent_Login_Activity"
+            android:exported="false" />
+        <activity
             android:name=".OrdersActivity"
             android:exported="true" />
 
