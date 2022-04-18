@@ -245,4 +245,10 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="15dp"/>
 
+    <Button
+        android:id="@+id/btn_goOrders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btn_orders"/>
+
 </RelativeLayout>

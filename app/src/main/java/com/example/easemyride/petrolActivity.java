@@ -59,7 +59,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
     private EditText edt_address;
     private TextView tv_total,tv_fuelPrice, tv_delivery,tv_delPrice, tv_amtPrice,edt_quantity;
     private ImageButton btn_loc;
-    private Button btn_confirm,btn_map,btn_checkout;
+    private Button btn_confirm,btn_map,btn_checkout,btn_goOrders;
     private Spinner sp_menu;
     private FloatingActionButton btn_orders;
 
@@ -98,6 +98,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
         tv_amtPrice=findViewById(R.id.tv_amtPrice);
         btn_confirm=findViewById(R.id.btn_confirm);
         btn_orders=findViewById(R.id.btn_orders);
+        btn_goOrders=findViewById(R.id.btn_goOrders);
 //        btn_checkout=findViewById(R.id.btn_checkout);
 
         firebaseAuth=FirebaseAuth.getInstance();
@@ -158,7 +159,12 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
                 makeOrder(view);
 
                 submitOrder();
+            }
+        });
 
+        btn_goOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 startActivity(new Intent(petrolActivity.this,OrdersActivity.class));
             }
         });
