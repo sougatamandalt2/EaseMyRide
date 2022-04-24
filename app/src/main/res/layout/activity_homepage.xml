@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomepageActivity">
+    tools:context=".HomepageActivity"
+    >
 
     <RelativeLayout
         android:id="@+id/rl_heading"
@@ -35,8 +36,8 @@
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
-            android:src="@mipmap/menu_icon" />
+            android:layout_marginRight="10dp"
+            android:src="@drawable/person_black" />
 
 <!--        <ImageView-->
 <!--            android:id="@+id/iv_logout"-->
@@ -55,7 +56,8 @@
         android:layout_below="@+id/rl_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        >
 
         <TextView
             android:id="@+id/tv_help"
@@ -73,7 +75,8 @@
             android:layout_below="@+id/tv_help"
             android:weightSum="2"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            >
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_fuel"
@@ -88,7 +91,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="3dp"
-                    android:background="@drawable/shape_border">
+                    android:background="@drawable/shape_border"
+                    >
 
                     <ImageView
                         android:id="@+id/iv_fuel"
