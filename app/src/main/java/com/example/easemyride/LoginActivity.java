@@ -27,7 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class LoginActivity extends AppCompatActivity {
     private RelativeLayout rl_login;
     private ImageView iv_logo,iv_gimg,iv_fimg;
-    private TextView tv_label,tv_loginagent,tv_loginby,tv_newuser,tv_forgetpassword;
+    private TextView tv_label,tv_loginby,tv_newuser,tv_forgetpassword;
     private EditText edt_email,edt_password;
     private Button btn_login;
 //    private LoginButton login_button;
@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         edt_email=findViewById(R.id.edt_email);
         edt_password=findViewById(R.id.edt_password);
         btn_login=findViewById(R.id.btn_login);
-        tv_loginagent=findViewById(R.id.tv_loginagent);
+
 
         tv_newuser=findViewById(R.id.tv_newuser);
         tv_forgetpassword=findViewById(R.id.tv_forgetpassword);
@@ -73,12 +73,6 @@ public class LoginActivity extends AppCompatActivity {
 
 //        String name=givename();
 
-        tv_loginagent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,Agent_Login_Activity.class));
-            }
-        });
         tv_newuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

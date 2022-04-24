@@ -19,14 +19,14 @@
             android:layout_centerVertical="true"
             android:src="@drawable/back_white" />
 
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/iv_profile"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
-            android:src="@mipmap/menu_icon" />
+            android:layout_marginLeft="40dp"
+            android:text="Fuel Type"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Select the type of Fuel"
+            android:text="Select the type of Fuel :-"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
             android:layout_below="@+id/tv_help"
             android:weightSum="2"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="25dp">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_petrol"
@@ -60,12 +60,16 @@
                 android:layout_height="200dp"
                 android:elevation="10dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                >
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:background="@drawable/shape_border"
+                    >
 
                     <ImageView
                         android:id="@+id/iv_petrol"
@@ -99,7 +103,9 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:background="@drawable/shape_border">
 
                     <ImageView
                         android:id="@+id/iv_diesel"
@@ -125,53 +131,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/ll_options2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_options"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cv_cng"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:elevation="10dp"
-                app:cardCornerRadius="10dp"
-                android:layout_gravity="center">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    >
-
-                    <ImageView
-                        android:id="@+id/iv_cng"
-                        android:layout_width="180dp"
-                        android:layout_height="140dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/cng" />
-
-                    <TextView
-                        android:id="@+id/tv_cng"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/iv_cng"
-                        android:layout_centerHorizontal="true"
-                        android:layout_margin="10dp"
-                        android:text="CNG / Gas"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                </RelativeLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </LinearLayout>
 
     </RelativeLayout>
 

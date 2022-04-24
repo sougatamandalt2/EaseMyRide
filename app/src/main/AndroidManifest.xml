@@ -48,10 +48,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".cngActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".dieselActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

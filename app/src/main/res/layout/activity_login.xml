@@ -10,24 +10,8 @@
     <RelativeLayout
         android:id="@+id/rl_login"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="180dp"
         android:background="@drawable/shape">
-
-        <TextView
-            android:id="@+id/tv_loginagent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/shape2"
-            android:backgroundTint="@color/black"
-            android:padding="10dp"
-            android:text="Click Here : Login as an Agent"
-            android:textColor="@color/white"
-            android:textSize="12dp" />
 
 
         <ImageView
@@ -35,7 +19,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_launcher_foreground" />
 
         <TextView
@@ -48,9 +32,9 @@
             android:layout_marginRight="20dp"
             android:fontFamily="serif"
             android:gravity="center"
-            android:text="LogIn"
+            android:text="LOGIN"
             android:textColor="@color/white"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
@@ -119,9 +103,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edt_password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape2"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:text="Login"
         android:textSize="25dp" />
 
@@ -214,13 +199,14 @@
 
     <TextView
         android:id="@+id/tv_newuser"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:padding="5dp"
         android:text="No account? Create one here."
         android:textSize="18dp"
+        android:background="#EAEAB3"
         android:textStyle="bold" />
 
 </RelativeLayout>
