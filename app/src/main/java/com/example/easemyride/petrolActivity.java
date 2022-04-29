@@ -98,7 +98,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
         tv_amtPrice=findViewById(R.id.tv_amtPrice);
         btn_confirm=findViewById(R.id.btn_confirm);
         btn_orders=findViewById(R.id.btn_orders);
-        btn_goOrders=findViewById(R.id.btn_goOrders);
+//        btn_goOrders=findViewById(R.id.btn_goOrders);
 //        btn_checkout=findViewById(R.id.btn_checkout);
 
         firebaseAuth=FirebaseAuth.getInstance();
@@ -162,12 +162,12 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
             }
         });
 
-        btn_goOrders.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(petrolActivity.this,OrdersActivity.class));
-            }
-        });
+//        btn_goOrders.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(petrolActivity.this,OrdersActivity.class));
+//            }
+//        });
 
     }
 

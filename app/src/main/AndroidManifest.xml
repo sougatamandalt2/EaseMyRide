@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EaseMyRide">
         <activity
+            android:name=".EditProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".Agent_Homepage"
             android:exported="false" />
         <activity
