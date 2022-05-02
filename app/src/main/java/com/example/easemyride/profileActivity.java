@@ -20,8 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class profileActivity extends AppCompatActivity {
 
-    private ImageView iv_logout,iv_edit;
-    private TextView tv_orders,tv_username,tv_useremail,tv_userphone;
+    private ImageView iv_logout,iv_edit,iv_back;
+    private TextView tv_orders,tv_username,tv_useremail,tv_userphone,tv_settings,tv_contacts,tv_aboutUs;
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -37,6 +37,10 @@ public class profileActivity extends AppCompatActivity {
         tv_useremail=findViewById(R.id.tv_useremail);
         tv_userphone=findViewById(R.id.tv_userphone);
         iv_edit=findViewById(R.id.iv_edit);
+        iv_back=findViewById(R.id.iv_back);
+        tv_settings=findViewById(R.id.tv_settings);
+        tv_contacts=findViewById(R.id.tv_contacts);
+        tv_aboutUs=findViewById(R.id.tv_aboutUs);
 
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
@@ -72,7 +76,7 @@ public class profileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 progressDialog.setMessage("Logging Out....");
 
-                DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Customers");
+                DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Customer");
 
                 firebaseAuth.signOut();
                 startActivity(new Intent(profileActivity.this,LoginActivity.class));
@@ -91,6 +95,13 @@ public class profileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(profileActivity.this,EditProfileActivity.class));
+            }
+        });
+
+        tv_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(profileActivity.this,SettingsActivity.class));
             }
         });
     }

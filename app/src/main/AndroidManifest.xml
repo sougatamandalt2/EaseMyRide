@@ -17,8 +17,18 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.EaseMyRide">
+        <activity
+            android:name=".UpdateMobileNoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UpdateNameActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
         <activity
             android:name=".EditProfileActivity"
             android:exported="true" />
