@@ -30,9 +30,6 @@
             android:name=".SettingsActivity"
             android:exported="true" />
         <activity
-            android:name=".EditProfileActivity"
-            android:exported="true" />
-        <activity
             android:name=".Agent_Homepage"
             android:exported="false" />
         <activity
@@ -65,7 +62,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".petrolActivity"
+            android:name=".petrol_mapActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

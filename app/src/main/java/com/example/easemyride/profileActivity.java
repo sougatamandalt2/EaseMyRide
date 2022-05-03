@@ -91,12 +91,6 @@ public class profileActivity extends AppCompatActivity {
             }
         });
 
-        iv_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(profileActivity.this,EditProfileActivity.class));
-            }
-        });
 
         tv_settings.setOnClickListener(new View.OnClickListener() {
             @Override
