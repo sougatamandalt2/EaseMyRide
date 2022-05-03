@@ -17,9 +17,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EaseMyRide">
+        android:theme="@style/Theme.EaseMyRide"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".order_petrol_activity"
+            android:exported="false" />
+        <activity
+            android:name=".map_petrol_Activity"
+            android:exported="false" />
         <activity
             android:name=".UpdateMobileNoActivity"
             android:exported="true" />
@@ -28,9 +34,6 @@
             android:exported="true" />
         <activity
             android:name=".SettingsActivity"
-            android:exported="true" />
-        <activity
-            android:name=".EditProfileActivity"
             android:exported="true" />
         <activity
             android:name=".Agent_Homepage"
@@ -65,7 +68,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".petrolActivity"
+            android:name=".petrol_mapActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

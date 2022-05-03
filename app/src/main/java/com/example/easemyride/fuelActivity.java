@@ -39,7 +39,7 @@ public class fuelActivity extends AppCompatActivity {
         cv_petrol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(fuelActivity.this,petrolActivity.class));
+                startActivity(new Intent(fuelActivity.this, map_petrol_Activity.class));
             }
         });
 

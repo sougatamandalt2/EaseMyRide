@@ -5,7 +5,6 @@ package com.example.easemyride;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.location.Address;
@@ -13,8 +12,6 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -54,7 +51,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-public class petrolActivity extends FragmentActivity implements OnMapReadyCallback{
+public class petrol_mapActivity extends FragmentActivity implements OnMapReadyCallback{
 
     private EditText edt_address;
     private TextView tv_total,tv_fuelPrice, tv_delivery,tv_delPrice, tv_amtPrice,edt_quantity;
@@ -86,18 +83,18 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_petrol);
+        setContentView(R.layout.activity_petrol_map);
 
-        edt_address=findViewById(R.id.edt_address);
-        edt_quantity=findViewById(R.id.edt_quantity);
-        sp_menu=findViewById(R.id.sp_menu);
-        tv_total=findViewById(R.id.tv_total);
-        tv_delivery=findViewById(R.id.tv_delivery);
-        tv_fuelPrice=findViewById(R.id.tv_fuelPrice);
-        tv_delPrice=findViewById(R.id.tv_delPrice);
-        tv_amtPrice=findViewById(R.id.tv_amtPrice);
+//        edt_address=findViewById(R.id.edt_address);
+//        edt_quantity=findViewById(R.id.edt_quantity);
+//        sp_menu=findViewById(R.id.sp_menu);
+//        tv_total=findViewById(R.id.tv_total);
+//        tv_delivery=findViewById(R.id.tv_delivery);
+//        tv_fuelPrice=findViewById(R.id.tv_fuelPrice);
+//        tv_delPrice=findViewById(R.id.tv_delPrice);
+//        tv_amtPrice=findViewById(R.id.tv_amtPrice);
         btn_confirm=findViewById(R.id.btn_confirm);
-        btn_orders=findViewById(R.id.btn_orders);
+//        btn_orders=findViewById(R.id.btn_orders);
 //        btn_goOrders=findViewById(R.id.btn_goOrders);
 //        btn_checkout=findViewById(R.id.btn_checkout);
 
@@ -174,7 +171,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
     private int orderID=0;
     private void addToCart(String title, String delPrice, String quantity, String finalPrice) {
 
-        EasyDB easyDB=EasyDB.init(petrolActivity.this,"ITEMS_DB")
+        EasyDB easyDB=EasyDB.init(petrol_mapActivity.this,"ITEMS_DB")
                 .addColumn(new Column("ORDER_ID",new String[]{"text","unique"}))
                 .addColumn(new Column("ITEM_PID",new String[]{"text","not null"}))
                 .addColumn(new Column("ORDER_Name",new String[]{"text","not null"}))
@@ -190,17 +187,17 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
                 .addData("ORDER_quantity",quantity)
                 .doneDataAdding();
 
-        Toast.makeText(petrolActivity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
+        Toast.makeText(petrol_mapActivity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
 
     }
 
     private void makeOrder(View view) {
         orderItemList=new ArrayList<>();
 
-        AlertDialog.Builder builder=new AlertDialog.Builder(petrolActivity.this);
+        AlertDialog.Builder builder=new AlertDialog.Builder(petrol_mapActivity.this);
         builder.setView(view);
 
-        EasyDB easyDB=EasyDB.init(petrolActivity.this,"ORDERS_DB")
+        EasyDB easyDB=EasyDB.init(petrol_mapActivity.this,"ORDERS_DB")
                 .addColumn(new Column("ORDER_ID",new String[]{"text","unique"}))
                 .addColumn(new Column("PRODUCT_PID",new String[]{"text","not null"}))
                 .addColumn(new Column("PRODUCT_Name",new String[]{"text","not null"}))
@@ -240,7 +237,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
                 @Override
                 public void onClick(View view) {
                     if(orderItemList.size()==0){
-                        Toast.makeText(petrolActivity.this, "No items in Cart", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(petrol_mapActivity.this, "No items in Cart", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     submitOrder();
@@ -296,7 +293,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
                             reference.child(timeStamp).child("items").child(pId).setValue(hashMap1);
                         }
                         progressDialog.dismiss();
-                        Toast.makeText(petrolActivity.this, "Order Placed....", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(petrol_mapActivity.this, "Order Placed....", Toast.LENGTH_SHORT).show();
 
 //                        Intent intent=new Intent(petrolActivity.this,OrderDetailsActivity.class);
 //                        intent.putExtra("orderTo",shopuid);
@@ -308,7 +305,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         progressDialog.dismiss();
-                        Toast.makeText(petrolActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(petrol_mapActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -352,7 +349,7 @@ public class petrolActivity extends FragmentActivity implements OnMapReadyCallba
                     longitude=currentLoc.getLongitude();
                     updateUI();
                     SupportMapFragment supportMapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fr_map);
-                    supportMapFragment.getMapAsync(petrolActivity.this);
+                    supportMapFragment.getMapAsync(petrol_mapActivity.this);
                 }
             }
         });
