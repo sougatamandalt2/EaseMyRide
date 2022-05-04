@@ -39,15 +39,13 @@ public class AdapterOrders extends RecyclerView.Adapter<AdapterOrders.Holder>{
         String id=modelOrders.getId();
         String pid=modelOrders.getPid();
         String name=modelOrders.getName();
-        String price=modelOrders.getRate();
+        String regNo=modelOrders.getRegNo();
         String totalCost=modelOrders.getTotalCost();
-        String quantity=modelOrders.getQuantity();
 
         holder.tv_title.setText(name);
-        holder.tv_fuelPrice.setText(price);
+        holder.tv_fuelPrice.setText(regNo);
         holder.tv_delPrice.setText("50");
         holder.tv_totalPrice.setText(totalCost);
-        holder.tv_quantity.setText(quantity);
     }
 
     @Override
@@ -58,7 +56,7 @@ public class AdapterOrders extends RecyclerView.Adapter<AdapterOrders.Holder>{
     class Holder extends RecyclerView.ViewHolder{
 
         private TextView tv_title,tv_fuelPrice,tv_delPrice,tv_totalPrice,
-                tv_quantity;
+                tv_regNo;
         public Holder(@NonNull View itemView) {
             super(itemView);
 
@@ -66,7 +64,7 @@ public class AdapterOrders extends RecyclerView.Adapter<AdapterOrders.Holder>{
             tv_fuelPrice=itemView.findViewById(R.id.tv_fuelPrice);
             tv_delPrice=itemView.findViewById(R.id.tv_delPrice);
             tv_totalPrice=itemView.findViewById(R.id.tv_totalPrice);
-            tv_quantity=itemView.findViewById(R.id.tv_quantity);
+            tv_regNo=itemView.findViewById(R.id.tv_regNo);
         }
     }
 }

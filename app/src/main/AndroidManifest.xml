@@ -68,10 +68,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".petrol_mapActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".medicalActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

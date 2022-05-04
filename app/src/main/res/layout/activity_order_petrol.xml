@@ -93,6 +93,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:weightSum="4">
+
             <TextView
                 android:id="@+id/tv_order_details"
                 android:layout_width="match_parent"
@@ -207,10 +208,11 @@
     </RelativeLayout>
 
     <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_alignParentBottom="true"
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:text=" Place Your Order "
         android:background="@drawable/shape03"

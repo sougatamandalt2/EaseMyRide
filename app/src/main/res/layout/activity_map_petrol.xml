@@ -35,8 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:paddingBottom="5dp"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="10dp">
 
         <fragment
             android:id="@+id/fr_map"
@@ -45,7 +44,7 @@
             android:layout_height="400dp" />
 
         <TextView
-            android:id="@+id/edt_address"
+            android:id="@+id/tv_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -74,7 +73,68 @@
             android:background="@drawable/shape2"
             android:padding="8dp"
             android:src="@drawable/target" />
+
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_map_head"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="City"
+            android:background="@drawable/shape_addres"
+            android:maxLines="1"
+            android:textSize="15dp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:hint="State"
+            android:background="@drawable/shape_addres"/>
+
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Country"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:background="@drawable/shape_addres"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_fullAddress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/ll_address"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:hint="Full Address"
+        android:inputType="textPostalAddress"
+        android:textSize="20dp"
+        android:background="@drawable/shape_addres"
+        android:maxLines="1"/>
+
 
     <Button
         android:id="@+id/btn_next"

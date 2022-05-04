@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -37,20 +38,22 @@ import java.util.Locale;
 
 public class map_petrol_Activity extends FragmentActivity implements OnMapReadyCallback {
     private ImageView iv_back,btn_loc;
-    private EditText edt_address;
+    private TextView tv_address,tv_city,tv_state,tv_country,tv_fullAddress;
     private Button btn_next;
 
 
     Location currentLoc;
     FusedLocationProviderClient fusedLocationProviderClient;
-    private ProgressDialog progressDialog;
+
     public String sp_value;
 
     private static final int LOCATION_REQUEST_CODE = 100;
     private String[] locationPermissions;
     private double latitude, longitude;
     private LocationManager locationManager;
-    FirebaseAuth firebaseAuth;
+
+    private ProgressDialog progressDialog;
+    private FirebaseAuth firebaseAuth;
 
 
 
@@ -59,13 +62,21 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_petrol);
 
-        firebaseAuth=FirebaseAuth.getInstance();
+
         iv_back=findViewById(R.id.iv_back);
         btn_next=findViewById(R.id.btn_next);
+        tv_address=findViewById(R.id.tv_address);
+        btn_loc=findViewById(R.id.btn_loc);
+        tv_city=findViewById(R.id.tv_city);
+        tv_state=findViewById(R.id.tv_state);
+        tv_country=findViewById(R.id.tv_country);
+        tv_fullAddress=findViewById(R.id.tv_fullAddress);
+        btn_next=findViewById(R.id.btn_next);
 
-//        progressDialog=new ProgressDialog(this);
-//        progressDialog.setTitle("please wait....");
-//        progressDialog.setCanceledOnTouchOutside(false);
+        firebaseAuth=FirebaseAuth.getInstance();
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setTitle("please wait....");
+        progressDialog.setCanceledOnTouchOutside(false);
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLastLoc();
@@ -73,7 +84,10 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(map_petrol_Activity.this,order_petrol_activity.class));
+                Intent intent=new Intent(map_petrol_Activity.this,order_petrol_activity.class);
+                intent.putExtra("lat",String.valueOf(latitude));
+                intent.putExtra("long",String.valueOf(longitude));
+                startActivity(intent);
             }
         });
 
@@ -81,6 +95,14 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        btn_loc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getLastLoc();
+                Toast.makeText(map_petrol_Activity.this, "Done", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -122,8 +144,15 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
             addresses=geocoder.getFromLocation(latitude,longitude,1);
 
             String address=addresses.get(0).getAddressLine(0);
+            String city=addresses.get(0).getLocality();
+            String state=addresses.get(0).getAdminArea();
+            String country=addresses.get(0).getCountryName();
 
-            edt_address.setText(address);
+            tv_address.setText(address);
+            tv_fullAddress.setText(address);
+            tv_city.setText(city);
+            tv_country.setText(country);
+            tv_state.setText(state);
         }
         catch(Exception e){
             Toast.makeText(this, "Error"+e.getMessage(), Toast.LENGTH_LONG).show();
