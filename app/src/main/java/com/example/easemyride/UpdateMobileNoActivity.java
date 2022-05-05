@@ -22,7 +22,7 @@ import java.util.HashMap;
 
 public class UpdateMobileNoActivity extends AppCompatActivity {
 
-    private Button button_mobupdste;
+    private Button button_update;
     private EditText edt_update_mob;
     private ImageView iv_back;
     private FirebaseAuth firebaseAuth;
@@ -34,7 +34,7 @@ public class UpdateMobileNoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update_mobile_no);
 
 
-        button_mobupdste=findViewById(R.id.button_mobupdste);
+        button_update=findViewById(R.id.button_update);
         edt_update_mob=findViewById(R.id.edt_update_mob);
         iv_back=findViewById(R.id.iv_back);
 
@@ -50,7 +50,7 @@ public class UpdateMobileNoActivity extends AppCompatActivity {
             }
         });
 
-        button_mobupdste.setOnClickListener(new View.OnClickListener() {
+        button_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 takeData();
@@ -58,15 +58,11 @@ public class UpdateMobileNoActivity extends AppCompatActivity {
         });
     }
 
-    private String username,userphone;
+    private String userphone;
     private void takeData() {
 
         userphone=edt_update_mob.getText().toString().trim();
 
-        if(TextUtils.isEmpty(username)){
-            Toast.makeText(UpdateMobileNoActivity.this, "Enter a name....", Toast.LENGTH_SHORT).show();
-            return;
-        }
         if(userphone.length()!=10){
             Toast.makeText(UpdateMobileNoActivity.this, "Enter a valid phone number....", Toast.LENGTH_SHORT).show();
             return;

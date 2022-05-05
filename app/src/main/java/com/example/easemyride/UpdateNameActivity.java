@@ -56,10 +56,10 @@ public class UpdateNameActivity extends AppCompatActivity {
         });
     }
 
-    private String username,userphone;
+    private String username;
     private void takeData() {
 
-        username=button_name_update.getText().toString().trim();
+        username=edt_update_name.getText().toString().trim();
 
         if(TextUtils.isEmpty(username)){
             Toast.makeText(UpdateNameActivity.this, "Enter a name....", Toast.LENGTH_SHORT).show();
