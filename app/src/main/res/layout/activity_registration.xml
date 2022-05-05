@@ -185,11 +185,47 @@
         android:layout_below="@id/edt_confPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
+        android:background="@drawable/shape2"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Sign up"
-        android:textSize="25dp"
-        android:background="@drawable/shape2"/>
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/btn_genOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_confPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/shape2"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Generate"
+        android:layout_toRightOf="@+id/btn_register"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/edt_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_register"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/shape2"
+        android:drawableStart="@drawable/con_password"
+        android:drawablePadding="10dp"
+        android:fontFamily="sans-serif"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
 
     <TextView
@@ -203,6 +239,8 @@
         android:textStyle="bold"
         android:background="#EAEAB3"
         android:padding="5dp"/>
+
+
 
 <!--    <TextView-->
 <!--        android:id="@+id/or_continue"-->
