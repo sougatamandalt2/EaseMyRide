@@ -6,19 +6,121 @@
     android:layout_height="match_parent"
     tools:context=".MobileVerificationActivity">
 
-    <EditText
-        android:id="@+id/edt_otp"
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/shape04">
+
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="OTP Verification"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter otp"
-        android:textSize="30dp"/>
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:layout_below="@id/rl_login"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <EditText
+            android:id="@+id/edt_1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_border"
+            android:layout_margin="5dp"/>
+        <EditText
+            android:id="@+id/edt_2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_border"
+            android:layout_margin="5dp"/>
+        <EditText
+            android:id="@+id/edt_3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_border"
+            android:layout_margin="5dp"/>
+        <EditText
+            android:id="@+id/edt_4"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_border"
+            android:layout_margin="5dp"/>
+        <EditText
+            android:id="@+id/edt_5"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_border"
+            android:layout_margin="5dp"/>
+        <EditText
+            android:id="@+id/edt_6"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_border"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+<!--    <EditText-->
+<!--        android:id="@+id/edt_otp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/rl_login"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:hint="Enter otp"-->
+<!--        android:textSize="30dp"/>-->
 
     <Button
         android:id="@+id/btn_submitOTP"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/shape03"
+        android:text="Verify"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/tv_resend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_otp"
-        android:layout_centerHorizontal="true"
-        android:text="submit"/>
+        android:text="Resend OTP"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@id/btn_submitOTP"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
