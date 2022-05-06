@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
     private ImageView iv_back,btn_loc;
     private TextView tv_address,tv_city,tv_state,tv_country,tv_fullAddress;
     private Button btn_next;
+    private LinearLayout ll_address;
 
 
     Location currentLoc;
@@ -62,7 +64,7 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_petrol);
 
-
+        ll_address=findViewById(R.id.ll_address);
         iv_back=findViewById(R.id.iv_back);
         btn_next=findViewById(R.id.btn_next);
         tv_address=findViewById(R.id.tv_address);
@@ -80,6 +82,9 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLastLoc();
+
+        tv_fullAddress.setVisibility(View.VISIBLE);
+        ll_address.setVisibility(View.VISIBLE);
 
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +107,7 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
             @Override
             public void onClick(View view) {
                 getLastLoc();
-                Toast.makeText(map_petrol_Activity.this, "Done", Toast.LENGTH_SHORT).show();
+                Toast.makeText(map_petrol_Activity.this, "Updating Location", Toast.LENGTH_SHORT).show();
             }
         });
 
