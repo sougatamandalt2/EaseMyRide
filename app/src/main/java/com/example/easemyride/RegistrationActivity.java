@@ -41,7 +41,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
 
-    private String name,email,password,confpassword,phone;
+    String name,email,password,confpassword,phone;
     private String verificationId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +85,13 @@ public class RegistrationActivity extends AppCompatActivity {
 
             public void onClick(View view) {
 
-                verifyCode(edt_otp.getText().toString());
+                Intent i=new Intent(RegistrationActivity.this,MobileVerificationActivity.class);
+                i.putExtra("name",name);
+                i.putExtra("email",email);
+                i.putExtra("password",password);
+                i.putExtra("confpassword",confpassword);
+                i.putExtra("phone",phone);
+                startActivity(i);
 
             }
         });
@@ -117,7 +123,6 @@ public class RegistrationActivity extends AppCompatActivity {
                                     }
                                 }
                                 });
-                            inputData();
                         } else {
                             // if the code is not correct then we are
                             // displaying an error message to the user.

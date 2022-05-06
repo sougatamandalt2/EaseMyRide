@@ -38,16 +38,33 @@
 
     </RelativeLayout>
 
+    <EditText
+        android:id="@+id/edt_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_login"
+        android:hint="Phone Number"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/edt_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_phone"
+        android:hint="Phone Number"
+        android:textSize="20dp"/>
+
     <LinearLayout
         android:id="@+id/ll_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="6"
-        android:layout_below="@id/rl_login"
+        android:layout_below="@id/edt_phone"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
+
         <EditText
             android:id="@+id/edt_1"
             android:layout_width="0dp"
@@ -103,12 +120,23 @@
 <!--        android:textSize="30dp"/>-->
 
     <Button
+        android:id="@+id/btn_generate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape03"
+        android:text="Generate"
+        android:textSize="20dp" />
+
+    <Button
         android:id="@+id/btn_submitOTP"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll_1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/shape03"
         android:text="Verify"
         android:textSize="20dp" />

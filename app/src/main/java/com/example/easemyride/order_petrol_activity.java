@@ -88,6 +88,13 @@ public class order_petrol_activity extends AppCompatActivity {
         latitude=intent.getStringExtra("lat");
         longitude=intent.getStringExtra("long");
 
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         String[] items={"150","300","450","950","1450"};
         ArrayAdapter<String> itemadapter=new ArrayAdapter<>(order_petrol_activity.this,R.layout.list_item,items);
         dropdown_menu.setAdapter((itemadapter));
