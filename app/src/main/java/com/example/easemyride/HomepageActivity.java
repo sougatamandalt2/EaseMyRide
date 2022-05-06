@@ -30,7 +30,7 @@ public class HomepageActivity extends AppCompatActivity {
     private CardView cv_fuel,cv_mechanic,cv_tow_truck,cv_medical;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
-
+    private ImageView iv_cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +56,7 @@ public class HomepageActivity extends AppCompatActivity {
         cv_medical=findViewById(R.id.cv_medical);
         iv_medical=findViewById(R.id.iv_medical);
         tv_medical=findViewById(R.id.tv_medical);
-
+        iv_cart=findViewById(R.id.iv_cart);
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
         progressDialog.setTitle("Please wait....");
@@ -75,6 +75,13 @@ public class HomepageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomepageActivity.this,profileActivity.class));
+            }
+        });
+
+        iv_cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity( new Intent(HomepageActivity.this,OrdersActivity.class));
             }
         });
 

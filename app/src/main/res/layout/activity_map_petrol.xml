@@ -33,7 +33,7 @@
         android:id="@+id/rl_map_head"
         android:layout_below="@+id/rl_heading"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="400dp"
         android:paddingBottom="5dp"
         android:layout_marginTop="10dp">
 
@@ -41,7 +41,7 @@
             android:id="@+id/fr_map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="360dp" />
+            android:layout_height="400dp" />
 
         <TextView
             android:id="@+id/tv_address"
@@ -78,23 +78,18 @@
 
     <LinearLayout
         android:id="@+id/ll_address"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="3"
         android:layout_below="@+id/rl_map_head"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible">
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true">
 
         <TextView
             android:id="@+id/tv_city"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:hint="City"
             android:background="@drawable/shape_addres"
             android:maxLines="1"
@@ -103,9 +98,8 @@
 
         <TextView
             android:id="@+id/tv_state"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:textSize="15dp"
             android:layout_marginLeft="20dp"
             android:padding="10dp"
@@ -115,9 +109,8 @@
 
         <TextView
             android:id="@+id/tv_country"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Country"
             android:textSize="15dp"
             android:layout_marginLeft="20dp"
@@ -130,29 +123,27 @@
     <TextView
         android:id="@+id/tv_fullAddress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/ll_address"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/shape_addres"
         android:gravity="center"
         android:hint="Full Address"
         android:inputType="textPostalAddress"
-        android:maxLines="1"
         android:textSize="20dp"
-        android:visibility="invisible"/>
+        android:background="@drawable/shape_addres"
+        android:maxLines="1"/>
 
 
     <Button
         android:id="@+id/btn_next"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
         android:background="@drawable/shape03"
-        android:text="NEXT" />
+        android:text="NEXT"
+        android:layout_marginBottom="25dp"/>
 
 </RelativeLayout>
