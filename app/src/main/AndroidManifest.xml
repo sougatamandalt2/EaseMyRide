@@ -25,6 +25,9 @@
             android:name=".order_diesel_activity"
             android:exported="false" />
         <activity
+            android:name=".map_diesel_activity"
+            android:exported="false" />
+        <activity
             android:name=".MobileVerificationActivity"
             android:exported="false" />
         <activity

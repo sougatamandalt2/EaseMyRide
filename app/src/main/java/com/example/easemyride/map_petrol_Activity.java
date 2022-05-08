@@ -71,7 +71,7 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
         btn_loc=findViewById(R.id.btn_loc);
         tv_city=findViewById(R.id.tv_city);
         tv_state=findViewById(R.id.tv_state);
-        tv_fullAddress=findViewById(R.id.tv_fullAddress);
+//        tv_fullAddress=findViewById(R.id.tv_fullAddress);
         btn_next=findViewById(R.id.btn_next);
 
         firebaseAuth=FirebaseAuth.getInstance();
@@ -149,7 +149,7 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
             String state=addresses.get(0).getAdminArea();
 
             tv_address.setText(address);
-            tv_fullAddress.setText(address);
+//            tv_fullAddress.setText(address);
             tv_city.setText(city);
             tv_state.setText(state);
         }

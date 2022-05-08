@@ -41,9 +41,11 @@
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/shape_6.xml" value="0.1671875" />
         <entry key="..\:/Demo/EaseMyRide/app/src/main/res/drawable/shape_border.xml" value="0.1795" />
         <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_homepage.xml" value="0.22447916666666667" />
+        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_map_diseal.xml" value="0.1" />
         <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_map_petrol.xml" value="0.22447916666666667" />
         <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_mobile_verification.xml" value="0.22447916666666667" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_order_petrol.xml" value="0.22447916666666667" />
+        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_order_diesel.xml" value="0.18" />
+        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_order_petrol.xml" value="0.1" />
         <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_orders.xml" value="0.22447916666666667" />
         <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_registration.xml" value="0.22447916666666667" />
         <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/email.xml" value="0.20092592592592592" />

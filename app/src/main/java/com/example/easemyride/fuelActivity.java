@@ -46,7 +46,7 @@ public class fuelActivity extends AppCompatActivity {
         cv_diesel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(fuelActivity.this,MapDisealActivity.class));
+                startActivity(new Intent(fuelActivity.this, map_diesel_activity.class));
             }
         });
 

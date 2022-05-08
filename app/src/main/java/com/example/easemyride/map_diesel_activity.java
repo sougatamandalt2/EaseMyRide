@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,10 +37,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.List;
 import java.util.Locale;
 
-public class MapDisealActivity extends FragmentActivity implements OnMapReadyCallback {
+public class map_diesel_activity extends FragmentActivity implements OnMapReadyCallback {
     private ImageView iv_back,btn_loc;
     private TextView tv_address,tv_city,tv_state,tv_country,tv_fullAddress;
     private Button btn_next;
+    private LinearLayout ll_address;
 
 
     Location currentLoc;
@@ -62,14 +64,14 @@ public class MapDisealActivity extends FragmentActivity implements OnMapReadyCal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_diseal);
 
-
+        ll_address=findViewById(R.id.ll_address);
         iv_back=findViewById(R.id.iv_back);
         btn_next=findViewById(R.id.btn_next);
         tv_address=findViewById(R.id.tv_address);
         btn_loc=findViewById(R.id.btn_loc);
         tv_city=findViewById(R.id.tv_city);
         tv_state=findViewById(R.id.tv_state);
-        tv_fullAddress=findViewById(R.id.tv_fullAddress);
+//        tv_fullAddress=findViewById(R.id.tv_fullAddress);
         btn_next=findViewById(R.id.btn_next);
 
         firebaseAuth=FirebaseAuth.getInstance();
@@ -83,7 +85,7 @@ public class MapDisealActivity extends FragmentActivity implements OnMapReadyCal
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MapDisealActivity.this,order_petrol_activity.class);
+                Intent intent=new Intent(map_diesel_activity.this,order_diesel_activity.class);
                 intent.putExtra("lat",String.valueOf(latitude));
                 intent.putExtra("long",String.valueOf(longitude));
                 startActivity(intent);
@@ -101,7 +103,7 @@ public class MapDisealActivity extends FragmentActivity implements OnMapReadyCal
             @Override
             public void onClick(View view) {
                 getLastLoc();
-                Toast.makeText(MapDisealActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                Toast.makeText(map_diesel_activity.this, "Updating Location", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -126,7 +128,7 @@ public class MapDisealActivity extends FragmentActivity implements OnMapReadyCal
                     longitude=currentLoc.getLongitude();
                     updateUI();
                     SupportMapFragment supportMapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fr_map);
-                    supportMapFragment.getMapAsync(MapDisealActivity.this);
+                    supportMapFragment.getMapAsync(map_diesel_activity.this);
                 }
             }
         });
@@ -145,12 +147,10 @@ public class MapDisealActivity extends FragmentActivity implements OnMapReadyCal
             String address=addresses.get(0).getAddressLine(0);
             String city=addresses.get(0).getLocality();
             String state=addresses.get(0).getAdminArea();
-            String country=addresses.get(0).getCountryName();
 
             tv_address.setText(address);
-            tv_fullAddress.setText(address);
+//            tv_fullAddress.setText(address);
             tv_city.setText(city);
-            tv_country.setText(country);
             tv_state.setText(state);
         }
         catch(Exception e){

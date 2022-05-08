@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,7 +43,8 @@ public class order_diesel_activity extends AppCompatActivity {
     private TextInputLayout textField,menu;
     private TextInputEditText textstyle;
     private AutoCompleteTextView dropdown_menu;
-    private TextView petrol_price,delivery_price,total_price;
+    private TextView diesel_price,delivery_price,total_price;
+    private LinearLayout ll_orderDetails;
     private ImageView iv_back;
     private Button btn_submit;
 
@@ -67,26 +69,38 @@ public class order_diesel_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_petrol);
+        setContentView(R.layout.activity_order_diesel);
 
         textField=findViewById(R.id.textField);
         menu=findViewById(R.id.menu);
         textstyle=findViewById(R.id.textstyle);
         dropdown_menu=findViewById(R.id.dropdown_menu);
-        petrol_price=findViewById(R.id.petrol_price);
+        diesel_price=findViewById(R.id.diesel_price);
         iv_back=findViewById(R.id.iv_back);
         delivery_price=findViewById(R.id.delivery_price);
         total_price=findViewById(R.id.total_price);
         btn_submit=findViewById(R.id.btn_submit);
+        ll_orderDetails=findViewById(R.id.ll_orderDetails);
 
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
         progressDialog.setTitle("please wait....");
         progressDialog.setCanceledOnTouchOutside(false);
 
+        ll_orderDetails.setVisibility(View.GONE);
+
+        btn_submit.setEnabled(false);
+
         Intent intent=getIntent();
         latitude=intent.getStringExtra("lat");
         longitude=intent.getStringExtra("long");
+
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         String[] items={"150","300","450","950","1450"};
         ArrayAdapter<String> itemadapter=new ArrayAdapter<>(order_diesel_activity.this,R.layout.list_item,items);
@@ -94,9 +108,11 @@ public class order_diesel_activity extends AppCompatActivity {
         dropdown_menu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String petrol_pr=items[i];
-                Integer tot_pr=Integer.parseInt(petrol_pr)+50;
-                petrol_price.setText(petrol_pr);
+                btn_submit.setEnabled(true);
+                ll_orderDetails.setVisibility(View.VISIBLE);
+                String diesel_pr=items[i];
+                Integer tot_pr=Integer.parseInt(diesel_pr)+50;
+                diesel_price.setText(diesel_pr);
                 delivery_price.setText("50");
                 total_price.setText(String.valueOf(tot_pr));
             }
@@ -109,12 +125,16 @@ public class order_diesel_activity extends AppCompatActivity {
                     Toast.makeText(order_diesel_activity.this, "Enter a valid Registration Number", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                String title="Fuel:Petrol";
+                if(diesel_price.getText().toString().trim().isEmpty()){
+                    Toast.makeText(order_diesel_activity.this, "Select a valid order", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String title="Fuel:diesel";
                 String finalPrice=total_price.getText().toString().trim().replace("$","");
                 String delPrice=delivery_price.getText().toString().trim().replace("$","");
-                String petrolPrice=petrol_price.getText().toString().trim().replace("$","");
+                String dieselPrice=diesel_price.getText().toString().trim().replace("$","");
                 String regNo=textstyle.getText().toString().trim().replace("$","");
-                addToCart(title,petrolPrice,delPrice,finalPrice,regNo);
+                addToCart(title,dieselPrice,delPrice,finalPrice,regNo);
 
                 new AlertDialog.Builder(order_diesel_activity.this).setIcon(android.R.drawable.ic_dialog_alert)
                         .setTitle("Placing Order").setMessage("Are you sure you want to place the order?")
@@ -124,8 +144,6 @@ public class order_diesel_activity extends AppCompatActivity {
                                 makeOrder(view);
 
                                 submitOrder();
-
-                                Toast.makeText(order_diesel_activity.this, "Order Placed",Toast.LENGTH_SHORT).show();
                             }
                         }).setNegativeButton("No", null).show();
             }
@@ -134,13 +152,13 @@ public class order_diesel_activity extends AppCompatActivity {
     }
 
     private int orderID=0;
-    private void addToCart(String title, String petrolPrice, String delPrice, String finalPrice,String regNo) {
+    private void addToCart(String title, String dieselPrice, String delPrice, String finalPrice,String regNo) {
 
         EasyDB easyDB=EasyDB.init(order_diesel_activity.this,"ITEMS_DB")
                 .addColumn(new Column("ORDER_ID",new String[]{"text","unique"}))
                 .addColumn(new Column("ITEM_PID",new String[]{"text","not null"}))
                 .addColumn(new Column("ORDER_Name",new String[]{"text","not null"}))
-                .addColumn(new Column("ORDER_petrolPrice",new String[]{"text","not null"}))
+                .addColumn(new Column("ORDER_dieselPrice",new String[]{"text","not null"}))
                 .addColumn(new Column("ORDER_regNo",new String[]{"text","not null"}))
                 .addColumn(new Column("Order_totalPrice",new String[]{"text","not null"}))
                 .addColumn(new Column("ORDER_delPrice",new String[]{"text","not null"}))
@@ -149,13 +167,11 @@ public class order_diesel_activity extends AppCompatActivity {
         orderID++;
         boolean b=easyDB.addData("ORDER_ID",orderID)
                 .addData("ORDER_Name",title)
-                .addData("ORDER_petrolPrice",petrolPrice)
+                .addData("ORDER_dieselPrice",dieselPrice)
                 .addData("ORDER_delPrice",delPrice)
                 .addData("Order_totalPrice",finalPrice)
                 .addData("ORDER_regNo",regNo)
                 .doneDataAdding();
-
-        Toast.makeText(order_diesel_activity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -223,7 +239,7 @@ public class order_diesel_activity extends AppCompatActivity {
         hashMap.put("orderID",timeStamp);
         hashMap.put("orderTime",timeStamp);
         hashMap.put("orderStatus","In Progress");
-        hashMap.put("orderTitle","Petrol");
+        hashMap.put("orderTitle","diesel");
         hashMap.put("orderCost",totalPrice);
         hashMap.put("orderBy",firebaseAuth.getUid());
         hashMap.put("orderTo","Agent01");
@@ -252,7 +268,9 @@ public class order_diesel_activity extends AppCompatActivity {
                         progressDialog.dismiss();
                         Toast.makeText(order_diesel_activity.this, "Order Placed....", Toast.LENGTH_SHORT).show();
 
-//                        Intent intent=new Intent(petrolActivity.this,OrderDetailsActivity.class);
+                        startActivity(new Intent(order_diesel_activity.this,OrdersActivity.class));
+
+//                        Intent intent=new Intent(dieselActivity.this,OrderDetailsActivity.class);
 //                        intent.putExtra("orderTo",shopuid);
 //                        intent.putExtra("orderID",timeStamp);
 //                        startActivity(intent);
