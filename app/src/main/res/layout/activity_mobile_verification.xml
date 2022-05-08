@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/shape2"
             android:drawableStart="@drawable/phone"
             android:fontFamily="sans-serif"
@@ -74,7 +74,7 @@
             android:layout_alignBaseline="@+id/edt_phone_code"
             android:layout_alignRight="@+id/edt_phone_code"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="35dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/shape2"
             android:fontFamily="sans-serif"
@@ -94,73 +94,80 @@
         android:id="@+id/ll_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="6"
         android:layout_below="@id/ll_phoneNo"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+
 
         <EditText
             android:id="@+id/edt_1"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
             android:gravity="center"
-            android:textSize="20dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"/>
+            android:textSize="20dp" />
+
         <EditText
             android:id="@+id/edt_2"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
             android:gravity="center"
-            android:textSize="20dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"/>
+            android:textSize="20dp" />
+
         <EditText
             android:id="@+id/edt_3"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
             android:gravity="center"
-            android:textSize="20dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"/>
+            android:textSize="20dp" />
+
         <EditText
             android:id="@+id/edt_4"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
             android:gravity="center"
-            android:textSize="20dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"/>
+            android:textSize="20dp" />
+
         <EditText
             android:id="@+id/edt_5"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
             android:gravity="center"
-            android:textSize="20dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"/>
+            android:textSize="20dp" />
+
         <EditText
             android:id="@+id/edt_6"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
             android:gravity="center"
-            android:textSize="20dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"/>
+            android:textSize="20dp" />
 
     </LinearLayout>
 
@@ -194,15 +201,17 @@
         android:background="@drawable/shape03"
         android:text="Verify"
         android:textSize="20dp" />
+
     <TextView
         android:id="@+id/tv_resend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resend OTP"
         android:layout_below="@+id/ll_1"
         android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:text="Resend OTP"
         android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="20dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -19,7 +22,7 @@ import java.util.ArrayList;
 public class OrdersActivity extends AppCompatActivity {
 
     private RecyclerView rv_orders;
-
+    private ImageView iv_back;
     private ArrayList<modelOrderAdv> orderList;
 
     private AdapterOrderAdv adapterOrderAdv;
@@ -33,7 +36,7 @@ public class OrdersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_orders);
 
         rv_orders=findViewById(R.id.rv_orders);
-
+        iv_back=findViewById(R.id.iv_back);
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
         progressDialog.setTitle("Please wait...");
@@ -41,7 +44,12 @@ public class OrdersActivity extends AppCompatActivity {
 
         loadOrders();
 
-
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(OrdersActivity.this,HomepageActivity.class));
+            }
+        });
     }
 
     private void loadOrders() {

@@ -78,8 +78,9 @@
 
     <LinearLayout
         android:id="@+id/ll_address"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="2"
         android:layout_below="@+id/rl_map_head"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
@@ -88,7 +89,8 @@
 
         <TextView
             android:id="@+id/tv_city"
-            android:layout_width="150dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:hint="City"
             android:background="@drawable/shape_addres"
@@ -98,7 +100,8 @@
 
         <TextView
             android:id="@+id/tv_state"
-            android:layout_width="150dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:layout_marginLeft="20dp"
@@ -114,15 +117,15 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@+id/ll_address"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_addres"
         android:gravity="center"
         android:hint="Full Address"
         android:inputType="textPostalAddress"
-        android:textSize="20dp"
-        android:background="@drawable/shape_addres"
-        android:maxLines="1"/>
+        android:maxLines="1"
+        android:textSize="20dp" />
 
 
     <Button

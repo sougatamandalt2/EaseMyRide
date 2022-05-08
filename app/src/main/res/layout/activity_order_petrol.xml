@@ -61,7 +61,7 @@
         android:id="@+id/menu"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/textField"
         android:layout_margin="15dp"
         android:hint="Select Petrol by Price : "
@@ -70,9 +70,8 @@
         <AutoCompleteTextView
             android:id="@+id/dropdown_menu"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="55dp"
             android:inputType="none"
-
             />
 
     </com.google.android.material.textfield.TextInputLayout>

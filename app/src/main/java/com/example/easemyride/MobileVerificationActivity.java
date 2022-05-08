@@ -13,6 +13,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class MobileVerificationActivity extends AppCompatActivity {
     private EditText edt_otp,edt_phone,edt_1,edt_2,edt_3,edt_4,edt_5,edt_6;
     private Button btn_submitOTP,btn_generate;
     private TextView tv_resend;
+    private LinearLayout ll_1;
 
     String otpCode;
     String name,email,password,confpassword,phone;
@@ -73,6 +75,7 @@ public class MobileVerificationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String phone = "+91" + edt_phone.getText().toString();
                 sendVerificationCode(phone);
+//                ll_1.setVisibility(View.VISIBLE);
             }
         });
 
