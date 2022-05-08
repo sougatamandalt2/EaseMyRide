@@ -27,7 +27,6 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
 
-        tv_mobile=findViewById(R.id.tv_mobile);
         tv_updatename=findViewById(R.id.tv_updatename);
         tv_logout=findViewById(R.id.tv_logout);
         iv_back=findViewById(R.id.iv_back);
@@ -47,12 +46,6 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        tv_mobile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SettingsActivity.this,UpdateMobileNoActivity.class));
-            }
-        });
 
         tv_updatename.setOnClickListener(new View.OnClickListener() {
             @Override

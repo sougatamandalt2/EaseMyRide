@@ -38,21 +38,57 @@
 
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/edt_phone"
+    <LinearLayout
+        android:id="@+id/ll_phoneNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_login"
-        android:hint="Phone Number"
-        android:textSize="20dp"/>
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
 
-    <EditText
-        android:id="@+id/edt_otp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_phone"
-        android:hint="Phone Number"
-        android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/edt_phone_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/shape2"
+            android:drawableStart="@drawable/phone"
+            android:fontFamily="sans-serif"
+            android:inputType="phone"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text=" +91  "
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt_email"
+            android:layout_alignBaseline="@+id/edt_phone_code"
+            android:layout_alignRight="@+id/edt_phone_code"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/shape2"
+            android:fontFamily="sans-serif"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_1"
@@ -60,8 +96,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="6"
-        android:layout_below="@id/edt_phone"
-        android:layout_marginTop="50dp"
+        android:layout_below="@id/ll_phoneNo"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
 
@@ -71,6 +107,9 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"/>
         <EditText
             android:id="@+id/edt_2"
@@ -78,6 +117,9 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"/>
         <EditText
             android:id="@+id/edt_3"
@@ -85,6 +127,9 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"/>
         <EditText
             android:id="@+id/edt_4"
@@ -92,6 +137,9 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"/>
         <EditText
             android:id="@+id/edt_5"
@@ -99,6 +147,9 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"/>
         <EditText
             android:id="@+id/edt_6"
@@ -106,6 +157,9 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/shape_border"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"/>
 
     </LinearLayout>
@@ -145,10 +199,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Resend OTP"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/ll_1"
+        android:layout_alignParentEnd="true"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_below="@id/btn_submitOTP"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

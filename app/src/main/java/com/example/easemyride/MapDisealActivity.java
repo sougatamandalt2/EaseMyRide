@@ -18,7 +18,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,11 +36,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.List;
 import java.util.Locale;
 
-public class map_petrol_Activity extends FragmentActivity implements OnMapReadyCallback {
+public class MapDisealActivity extends FragmentActivity implements OnMapReadyCallback {
     private ImageView iv_back,btn_loc;
     private TextView tv_address,tv_city,tv_state,tv_country,tv_fullAddress;
     private Button btn_next;
-    private LinearLayout ll_address;
 
 
     Location currentLoc;
@@ -62,9 +60,9 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map_petrol);
+        setContentView(R.layout.activity_map_diseal);
 
-        ll_address=findViewById(R.id.ll_address);
+
         iv_back=findViewById(R.id.iv_back);
         btn_next=findViewById(R.id.btn_next);
         tv_address=findViewById(R.id.tv_address);
@@ -85,7 +83,7 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(map_petrol_Activity.this,order_petrol_activity.class);
+                Intent intent=new Intent(MapDisealActivity.this,order_petrol_activity.class);
                 intent.putExtra("lat",String.valueOf(latitude));
                 intent.putExtra("long",String.valueOf(longitude));
                 startActivity(intent);
@@ -103,7 +101,7 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
             @Override
             public void onClick(View view) {
                 getLastLoc();
-                Toast.makeText(map_petrol_Activity.this, "Updating Location", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MapDisealActivity.this, "Done", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -128,7 +126,7 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
                     longitude=currentLoc.getLongitude();
                     updateUI();
                     SupportMapFragment supportMapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fr_map);
-                    supportMapFragment.getMapAsync(map_petrol_Activity.this);
+                    supportMapFragment.getMapAsync(MapDisealActivity.this);
                 }
             }
         });
@@ -147,10 +145,12 @@ public class map_petrol_Activity extends FragmentActivity implements OnMapReadyC
             String address=addresses.get(0).getAddressLine(0);
             String city=addresses.get(0).getLocality();
             String state=addresses.get(0).getAdminArea();
+            String country=addresses.get(0).getCountryName();
 
             tv_address.setText(address);
             tv_fullAddress.setText(address);
             tv_city.setText(city);
+            tv_country.setText(country);
             tv_state.setText(state);
         }
         catch(Exception e){

@@ -70,7 +70,7 @@
         <AutoCompleteTextView
             android:id="@+id/dropdown_menu"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="50dp"
             android:inputType="none"
 
             />
@@ -86,10 +86,9 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp">
-<!--        android:visibility="invisible"-->
+        <!--        android:visibility="invisible"-->
 
         <LinearLayout
-            android:id="@+id/ll_orderDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -99,52 +98,66 @@
                 android:id="@+id/tv_order_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Order Details : "
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fuel Delivery : Petrol "
                 android:gravity="center"
-                android:text="Order Details : "
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                />
+
 
             <LinearLayout
                 android:id="@+id/ll_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_order_details"
+                android:weightSum="2"
                 android:layout_weight="2"
-                android:paddingStart="20dp"
-                android:weightSum="2">
+                android:layout_below="@id/tv_order_details"
+                android:paddingStart="20dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    android:text="Petrol Price : "
+                    android:text="Fuel Price : "
+                    android:textSize="20dp"
                     android:textAlignment="textStart"
-                    android:textSize="20dp" />
-
+                    />
                 <TextView
                     android:id="@+id/petrol_price"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="monospace"
-                    android:paddingRight="40dp"
-                    android:text="150"
+                    android:layout_height="wrap_content"
                     android:textAlignment="textEnd"
+                    android:text="150"
+                    android:paddingRight="40dp"
                     android:textSize="25dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_alignBottom="@id/ll_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_order_details"
-                android:layout_alignBottom="@id/ll_1"
-                android:layout_marginTop="10dp"
+                android:weightSum="2"
                 android:paddingStart="20dp"
-                android:weightSum="2">
+                android:layout_below="@id/tv_order_details"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -152,53 +165,54 @@
                     android:layout_weight="1"
                     android:padding="10dp"
                     android:text="Delivery Fee : "
+                    android:textSize="20dp"
                     android:textAlignment="textStart"
-                    android:textSize="20dp" />
-
+                    />
                 <TextView
                     android:id="@+id/delivery_price"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="monospace"
-                    android:paddingRight="40dp"
-                    android:text="50"
+                    android:layout_height="wrap_content"
                     android:textAlignment="textEnd"
+                    android:text="50"
+                    android:paddingRight="40dp"
                     android:textSize="25dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    />
             </LinearLayout>
-
             <LinearLayout
+                android:layout_alignBottom="@id/ll_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_order_details"
-                android:layout_alignBottom="@id/ll_1"
-                android:layout_marginTop="30dp"
+                android:weightSum="2"
                 android:paddingStart="20dp"
-                android:weightSum="2">
+                android:layout_below="@id/tv_order_details"
+                android:layout_marginTop="30dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="monospace"
                     android:padding="10dp"
                     android:text="Total Price : "
-                    android:textAlignment="textStart"
                     android:textSize="20dp"
-                    android:textStyle="bold" />
-
+                    android:textAlignment="textStart"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold"
+                    />
                 <TextView
                     android:id="@+id/total_price"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="monospace"
-                    android:paddingRight="40dp"
-                    android:text="50"
+                    android:layout_height="wrap_content"
                     android:textAlignment="textEnd"
+                    android:text="50"
+                    android:paddingRight="40dp"
                     android:textSize="30dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    />
             </LinearLayout>
         </LinearLayout>
 
@@ -209,10 +223,11 @@
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:text=" Place Your Order "
         android:background="@drawable/shape03"
-        android:text=" Place Your Order " />
+        />
 
 </RelativeLayout>

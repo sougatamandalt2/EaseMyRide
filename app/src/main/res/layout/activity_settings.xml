@@ -43,7 +43,7 @@
     <LinearLayout
         android:id="@+id/ll_options"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:layout_below="@+id/rl_heading"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
@@ -53,21 +53,20 @@
             android:layout_width="120dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="100dp"
             android:layout_marginTop="40dp"
-            android:layout_weight="15"
+            android:layout_marginBottom="100dp"
+            android:layout_weight="20"
             android:background="@drawable/shape_round"
-            android:src="@drawable/person_black"
-            />
+            android:src="@drawable/person_black" />
 
 
         <TextView
             android:id="@+id/tv_updatename"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="7"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="8"
             android:background="@drawable/shape_round2"
             android:drawableStart="@drawable/edit_black"
             android:drawableEnd="@drawable/arrow_black"
@@ -80,28 +79,11 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_mobile"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="7"
-            android:background="@drawable/shape_round2"
-            android:drawableStart="@drawable/edit_black"
-            android:drawableEnd="@drawable/arrow_black"
-            android:drawablePadding="20dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="Update Mobile Number"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/tv_logout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="10dp"
-            android:layout_weight="7"
+            android:layout_weight="8"
             android:background="@drawable/shape_round2"
             android:drawableStart="@drawable/logout_black"
             android:drawableEnd="@drawable/arrow_black"

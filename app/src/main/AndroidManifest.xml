@@ -22,6 +22,9 @@
         android:theme="@style/Theme.EaseMyRide"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".order_diesel_activity"
+            android:exported="false" />
+        <activity
             android:name=".MobileVerificationActivity"
             android:exported="false" />
         <activity
@@ -30,9 +33,6 @@
         <activity
             android:name=".map_petrol_Activity"
             android:exported="false" />
-        <activity
-            android:name=".UpdateMobileNoActivity"
-            android:exported="true" />
         <activity
             android:name=".UpdateNameActivity"
             android:exported="true" />

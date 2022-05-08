@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,8 +34,9 @@ import java.util.concurrent.TimeUnit;
 
 public class MobileVerificationActivity extends AppCompatActivity {
 
-    private EditText edt_otp,edt_phone;
+    private EditText edt_otp,edt_phone,edt_1,edt_2,edt_3,edt_4,edt_5,edt_6;
     private Button btn_submitOTP,btn_generate;
+    private TextView tv_resend;
 
     String otpCode;
     String name,email,password,confpassword,phone;
@@ -46,21 +50,33 @@ public class MobileVerificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile_verification);
 
-        edt_otp=findViewById(R.id.edt_otp);
         btn_submitOTP=findViewById(R.id.btn_submitOTP);
         edt_phone=findViewById(R.id.edt_phone);
         btn_generate=findViewById(R.id.btn_generate);
-
-        otpCode=getIntent().getStringExtra("otp");
-
-
+        edt_1=findViewById(R.id.edt_1);
+        edt_2=findViewById(R.id.edt_2);
+        edt_3=findViewById(R.id.edt_3);
+        edt_4=findViewById(R.id.edt_4);
+        edt_5=findViewById(R.id.edt_5);
+        edt_6=findViewById(R.id.edt_6);
+        tv_resend=findViewById(R.id.tv_resend);
 
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
         progressDialog.setTitle("Please wait....");
         progressDialog.setCanceledOnTouchOutside(false);
 
+        btn_submitOTP.setVisibility(View.GONE);
+
         btn_generate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone = "+91" + edt_phone.getText().toString();
+                sendVerificationCode(phone);
+            }
+        });
+
+        tv_resend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String phone = "+91" + edt_phone.getText().toString();
@@ -73,10 +89,130 @@ public class MobileVerificationActivity extends AppCompatActivity {
 
             public void onClick(View view) {
 
-                verifyCode(edt_otp.getText().toString());
+                if(!edt_1.getText().toString().trim().isEmpty() && !edt_2.getText().toString().trim().isEmpty() &&
+                        !edt_3.getText().toString().trim().isEmpty() && !edt_4.getText().toString().trim().isEmpty() &&
+                        !edt_5.getText().toString().trim().isEmpty() && !edt_6.getText().toString().trim().isEmpty() ) {
+
+                    String myOTP = edt_1.getText().toString().trim() +
+                            edt_2.getText().toString().trim() +
+                            edt_3.getText().toString().trim() +
+                            edt_4.getText().toString().trim() +
+                            edt_5.getText().toString().trim() +
+                            edt_6.getText().toString().trim();
+
+                    verifyCode(myOTP);
+
+                }
+                else{
+                    Toast.makeText(MobileVerificationActivity.this, "Enter all the numbers", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
             }
         });
+
+        moveEdt();
+
+    }
+
+    private void moveEdt() {
+
+        edt_1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!charSequence.toString().trim().isEmpty()){
+                    edt_2.requestFocus();
+                    edt_2.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        edt_2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!charSequence.toString().trim().isEmpty()){
+                    edt_3.requestFocus();
+                    edt_3.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        edt_3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!charSequence.toString().trim().isEmpty()){
+                    edt_4.requestFocus();
+                    edt_4.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        edt_4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!charSequence.toString().trim().isEmpty()){
+                    edt_5.requestFocus();
+                    edt_5.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        edt_5.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!charSequence.toString().trim().isEmpty()){
+                    edt_6.requestFocus();
+                    edt_6.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
     }
 
     private void signInWithCredential(PhoneAuthCredential credential) {
@@ -138,6 +274,8 @@ public class MobileVerificationActivity extends AppCompatActivity {
             // contains a unique id which
             // we are storing in our string
             // which we have already created.
+            btn_generate.setVisibility(View.GONE);
+            btn_submitOTP.setVisibility(View.VISIBLE);
             verificationId = s;
         }
 
@@ -191,7 +329,7 @@ public class MobileVerificationActivity extends AppCompatActivity {
         email=getIntent().getStringExtra("email");
         password=getIntent().getStringExtra("password");
         confpassword=getIntent().getStringExtra("confpassword");
-        phone=getIntent().getStringExtra("phone");
+        phone=edt_phone.getText().toString().trim();
 
         if(TextUtils.isEmpty(name)){
             Toast.makeText(MobileVerificationActivity.this, "Name field is empty", Toast.LENGTH_SHORT).show();
