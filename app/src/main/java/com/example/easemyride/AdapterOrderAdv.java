@@ -73,15 +73,16 @@ public class AdapterOrderAdv extends RecyclerView.Adapter<AdapterOrderAdv.Holder
 
         holder.tv_orderDate.setText(formatDate);
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent=new Intent(context,OrderDetailsUserActivity.class);
-//                intent.putExtra("orderTo",orderTo);
-//                intent.putExtra("orderID",orderID);
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,OrderDetailsActivity.class);
+                intent.putExtra("orderTo",orderBy);
+                intent.putExtra("orderID",orderID);
+                intent.putExtra("orderDate",formatDate);
+                context.startActivity(intent);
+            }
+        });
     }
 
     private void loadShopInfo(modelOrderAdv modelOrderUser, Holder holder) {

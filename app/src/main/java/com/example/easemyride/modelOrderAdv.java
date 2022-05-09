@@ -2,12 +2,12 @@ package com.example.easemyride;
 
 public class modelOrderAdv {
 
-    String longitude,latitude,orderTo,orderBy,orderCost,orderTitle,orderStatus,orderTime,orderID;
+    String longitude,latitude,orderTo,orderBy,orderCost,orderTitle,orderStatus,orderTime,orderID,orderDate;
 
     public modelOrderAdv() {
     }
 
-    public modelOrderAdv(String longitude, String latitude, String orderTo, String orderBy, String orderCost, String orderTitle, String orderStatus, String orderTime, String orderID) {
+    public modelOrderAdv(String longitude, String latitude, String orderTo, String orderBy, String orderCost, String orderTitle, String orderStatus, String orderTime, String orderID, String orderDate) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.orderTo = orderTo;
@@ -17,6 +17,7 @@ public class modelOrderAdv {
         this.orderStatus = orderStatus;
         this.orderTime = orderTime;
         this.orderID = orderID;
+        this.orderDate = orderDate;
     }
 
     public String getLongitude() {
@@ -89,5 +90,13 @@ public class modelOrderAdv {
 
     public void setOrderID(String orderID) {
         this.orderID = orderID;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 }

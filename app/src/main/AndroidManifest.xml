@@ -22,6 +22,9 @@
         android:theme="@style/Theme.EaseMyRide"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".order_diesel_activity"
             android:exported="false" />
         <activity
