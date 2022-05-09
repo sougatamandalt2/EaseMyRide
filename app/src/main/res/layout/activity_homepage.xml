@@ -38,6 +38,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:src="@drawable/person_black" />
+
         <ImageView
             android:id="@+id/iv_cart"
             android:layout_width="40dp"
@@ -47,15 +48,6 @@
             android:layout_marginRight="60dp"
             android:src="@drawable/bag_white" />
 
-        <ImageView
-            android:id="@+id/iv_cart"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@id/iv_profile"
-            android:layout_alignEnd="@id/iv_profile"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="60dp"
-            android:src="@drawable/bag_white" />
 
         <!--        <ImageView-->
         <!--            android:id="@+id/iv_logout"-->

@@ -21,5 +21,14 @@
 
     </string-array>
 
+    <string-array name="vehicle">
+
+        <item>2 Wheeler / Bike</item>
+        <item>3 Wheeler / Auto</item>
+        <item>4 Wheeler / Car</item>
+        <item>Bus / Track</item>
+
+    </string-array>
+
 
 </resources>

@@ -78,6 +78,20 @@ public class HomepageActivity extends AppCompatActivity {
             }
         });
 
+        cv_tow_truck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomepageActivity.this,tow_truckActivity.class));
+            }
+        });
+
+        cv_medical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomepageActivity.this,FirstaidActivity.class));
+            }
+        });
+
         iv_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,19 +120,6 @@ public class HomepageActivity extends AppCompatActivity {
             }
         });
 
-        cv_tow_truck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomepageActivity.this,towtruckActivity.class));
-            }
-        });
-
-        cv_medical.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomepageActivity.this,medicalActivity.class));
-            }
-        });
     }
     private void checkuser() {
 
