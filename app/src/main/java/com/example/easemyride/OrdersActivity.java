@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -50,6 +51,7 @@ public class OrdersActivity extends AppCompatActivity {
                 startActivity(new Intent(OrdersActivity.this,HomepageActivity.class));
             }
         });
+
     }
 
     private void loadOrders() {

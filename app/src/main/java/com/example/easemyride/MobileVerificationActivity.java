@@ -84,6 +84,9 @@ public class MobileVerificationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String phone = "+91" + edt_phone.getText().toString();
                 sendVerificationCode(phone);
+
+                btn_submitOTP.setVisibility(View.VISIBLE);
+                btn_generate.setVisibility(View.GONE);
             }
         });
 
@@ -228,12 +231,12 @@ public class MobileVerificationActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // if the code is correct and the task is successful
                             // we are sending our user to new activity.
-                            Toast.makeText(MobileVerificationActivity.this, "Account Created", Toast.LENGTH_LONG).show();
+                            Toast.makeText(MobileVerificationActivity.this, "", Toast.LENGTH_LONG).show();
                             FirebaseAuth.getInstance().getCurrentUser().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(MobileVerificationActivity.this, "Deletion Success", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MobileVerificationActivity.this, "", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -319,7 +322,6 @@ public class MobileVerificationActivity extends AppCompatActivity {
         // below line is used for getting getting
         // credentials from our verification id and code.
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-        Toast.makeText(this, ""+String.valueOf(credential), Toast.LENGTH_SHORT).show();
 
         // after getting credential we are
         // calling sign in method.

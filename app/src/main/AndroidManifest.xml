@@ -22,12 +22,6 @@
         android:theme="@style/Theme.EaseMyRide"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".FirstaidActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tow_truckActivity"
-            android:exported="false" />
-        <activity
             android:name=".order_diesel_activity"
             android:exported="false" />
         <activity
@@ -78,6 +72,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".dieselActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".medicalActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".towtruckActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
