@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -87,7 +86,7 @@ public class profileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 progressDialog.setMessage("Showing your orders....");
-                startActivity(new Intent(profileActivity.this,OrdersActivity.class));
+                startActivity(new Intent(profileActivity.this, OrdersListActivity.class));
             }
         });
 

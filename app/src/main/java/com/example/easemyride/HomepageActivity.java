@@ -95,7 +95,7 @@ public class HomepageActivity extends AppCompatActivity {
         iv_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity( new Intent(HomepageActivity.this,OrdersActivity.class));
+                startActivity( new Intent(HomepageActivity.this, OrdersListActivity.class));
             }
         });
 

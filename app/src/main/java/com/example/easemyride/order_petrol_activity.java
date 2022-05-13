@@ -11,7 +11,6 @@ import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -268,7 +267,7 @@ public class order_petrol_activity extends AppCompatActivity {
                         progressDialog.dismiss();
                         Toast.makeText(order_petrol_activity.this, "Order Placed....", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(order_petrol_activity.this,OrdersActivity.class));
+                        startActivity(new Intent(order_petrol_activity.this, OrdersListActivity.class));
 
 //                        Intent intent=new Intent(petrolActivity.this,OrderDetailsActivity.class);
 //                        intent.putExtra("orderTo",shopuid);

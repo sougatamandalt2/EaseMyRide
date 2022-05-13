@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -20,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class OrdersActivity extends AppCompatActivity {
+public class OrdersListActivity extends AppCompatActivity {
 
     private RecyclerView rv_orders;
     private ImageView iv_back;
@@ -34,7 +33,7 @@ public class OrdersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_orders);
+        setContentView(R.layout.activity_orders_list);
 
         rv_orders=findViewById(R.id.rv_orders);
         iv_back=findViewById(R.id.iv_back);
@@ -48,7 +47,7 @@ public class OrdersActivity extends AppCompatActivity {
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(OrdersActivity.this,HomepageActivity.class));
+                startActivity(new Intent(OrdersListActivity.this,HomepageActivity.class));
             }
         });
 
@@ -77,7 +76,7 @@ public class OrdersActivity extends AppCompatActivity {
 
                                             orderList.add(modelOrderAdv);
                                         }
-                                        adapterOrderAdv= new AdapterOrderAdv(OrdersActivity.this,orderList);
+                                        adapterOrderAdv= new AdapterOrderAdv(OrdersListActivity.this,orderList);
                                         rv_orders.setAdapter(adapterOrderAdv);
                                     }
                                 }

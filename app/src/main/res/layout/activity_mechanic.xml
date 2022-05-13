@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mechanicActivity"
-    >
+    tools:context=".mechanicActivity">
 
     <RelativeLayout
         android:id="@+id/rl_heading"
@@ -21,60 +20,149 @@
             android:src="@drawable/back_white" />
 
         <TextView
-            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="40dp"
-            android:text="Mechanic Activity "
+            android:text="Problem Type"
             android:textColor="@color/white"
             android:textSize="20dp" />
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_below="@+id/rl_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/tv_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Select the issue :-"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_options"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_help"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_tyre"
+                android:layout_width="0dp"
+                android:layout_height="225dp"
+                android:elevation="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:background="@drawable/shape_border">
+
+                    <ImageView
+                        android:id="@+id/iv_tyre"
+                        android:layout_width="180dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/tyre" />
+
+                    <TextView
+                        android:id="@+id/tv_tyre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_tyre"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="Flat Tyre ?"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_tyre"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Fix Tyre Puncture"
+                        android:textSize="15dp"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_start"
+                android:layout_width="0dp"
+                android:layout_height="225dp"
+                android:elevation="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:background="@drawable/shape_border">
+
+                    <ImageView
+                        android:id="@+id/iv_start"
+                        android:layout_width="180dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/engine" />
+
+                    <TextView
+                        android:id="@+id/tv_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_start"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="Starting Issue ?"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_start"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="monospace"
+                        android:text="Need a JumpStart"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
 
 
     </RelativeLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/menu"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_below="@+id/rl_heading"
-        android:layout_margin="15dp"
-        android:hint="Select the type of your Vehicle  "
-        app:startIconDrawable="@drawable/money_black">
-
-        <AutoCompleteTextView
-            android:id="@+id/dropdown_menu"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:inputType="none"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:id="@+id/textField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Registration Number of Your Vechicle :"
-        android:layout_marginStart="15dp"
-        android:inputType="text"
-        android:textSize="20dp"
-        app:startIconDrawable="@drawable/car_black"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="25dp"
-        android:layout_below="@+id/menu"
-        android:layout_marginEnd="15dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textstyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
 </RelativeLayout>

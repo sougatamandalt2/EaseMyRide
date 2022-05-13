@@ -1,15 +1,24 @@
 package com.example.easemyride;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
+
+import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -21,26 +30,85 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.List;
+import java.util.Locale;
 
 public class mapActivity extends FragmentActivity implements OnMapReadyCallback {
+    private ImageView iv_back,btn_loc;
+    private TextView tv_address,tv_city,tv_state,tv_country,tv_fullAddress;
+    private Button btn_next;
+    private LinearLayout ll_address;
+
 
     Location currentLoc;
     FusedLocationProviderClient fusedLocationProviderClient;
 
+    public String sp_value;
+
     private static final int LOCATION_REQUEST_CODE = 100;
-
     private String[] locationPermissions;
-
     private double latitude, longitude;
-
+    private String issue;
     private LocationManager locationManager;
+
+    private ProgressDialog progressDialog;
+    private FirebaseAuth firebaseAuth;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+        ll_address=findViewById(R.id.ll_address);
+        iv_back=findViewById(R.id.iv_back);
+        btn_next=findViewById(R.id.btn_next);
+        tv_address=findViewById(R.id.tv_address);
+        btn_loc=findViewById(R.id.btn_loc);
+        tv_city=findViewById(R.id.tv_city);
+        tv_state=findViewById(R.id.tv_state);
+//        tv_fullAddress=findViewById(R.id.tv_fullAddress);
+        btn_next=findViewById(R.id.btn_next);
+
+        firebaseAuth=FirebaseAuth.getInstance();
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setTitle("please wait....");
+        progressDialog.setCanceledOnTouchOutside(false);
+
+        issue=getIntent().getStringExtra("issue");
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        getLastLoc();
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mapActivity.this, order_mechanic.class);
+                intent.putExtra("lat",String.valueOf(latitude));
+                intent.putExtra("long",String.valueOf(longitude));
+                intent.putExtra("issue", String.valueOf(issue));
+                startActivity(intent);
+            }
+        });
+
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        btn_loc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getLastLoc();
+                Toast.makeText(mapActivity.this, "Updating Location", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     private void getLastLoc() {
@@ -58,11 +126,38 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback 
             public void onSuccess(Location location) {
                 if(location!=null){
                     currentLoc=location;
+                    latitude=currentLoc.getLatitude();
+                    longitude=currentLoc.getLongitude();
+                    updateUI();
                     SupportMapFragment supportMapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fr_map);
                     supportMapFragment.getMapAsync(mapActivity.this);
                 }
             }
         });
+
+    }
+
+    private void updateUI() {
+
+        Geocoder geocoder;
+        List<Address> addresses;
+        geocoder=new Geocoder(this, Locale.getDefault());
+
+        try{
+            addresses=geocoder.getFromLocation(latitude,longitude,1);
+
+            String address=addresses.get(0).getAddressLine(0);
+            String city=addresses.get(0).getLocality();
+            String state=addresses.get(0).getAdminArea();
+
+            tv_address.setText(address);
+//            tv_fullAddress.setText(address);
+            tv_city.setText(city);
+            tv_state.setText(state);
+        }
+        catch(Exception e){
+            Toast.makeText(this, "Error"+e.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
     }
 
@@ -89,7 +184,8 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-    @Override
+
+
     public void onMapReady(GoogleMap googleMap) {
 
         LatLng latLng=new LatLng(currentLoc.getLatitude(),currentLoc.getLongitude());

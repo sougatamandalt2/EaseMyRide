@@ -4,12 +4,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mapActivity">
+    tools:context=".map_petrol_Activity">
 
-    <fragment
-        android:id="@+id/fr_map"
+    <RelativeLayout
+        android:id="@+id/rl_heading"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.google.android.gms.maps.SupportMapFragment"/>
+        android:layout_height="45dp"
+        android:background="@drawable/shape_05">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:text="Confirm Your Location"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_map_head"
+        android:layout_below="@+id/rl_heading"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="10dp">
+
+        <fragment
+            android:id="@+id/fr_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape2"
+            android:drawableStart="@drawable/location"
+            android:drawablePadding="10dp"
+            android:hint="Your Current Location"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+        <ImageButton
+            android:id="@+id/btn_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape2"
+            android:padding="8dp"
+            android:src="@drawable/target" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_below="@+id/rl_map_head"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="City"
+            android:background="@drawable/shape_addres"
+            android:maxLines="1"
+            android:textSize="15dp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:hint="State"
+            android:background="@drawable/shape_addres"/>
+
+    </LinearLayout>
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_fullAddress"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:layout_below="@+id/ll_address"-->
+    <!--        android:layout_marginLeft="10dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginRight="10dp"-->
+    <!--        android:background="@drawable/shape_addres"-->
+    <!--        android:gravity="center"-->
+    <!--        android:hint="Full Address"-->
+    <!--        android:inputType="textPostalAddress"-->
+    <!--        android:maxLines="1"-->
+    <!--        android:textSize="20dp" />-->
+
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/shape03"
+        android:text="NEXT" />
 
 </RelativeLayout>
