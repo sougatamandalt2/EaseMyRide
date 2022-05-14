@@ -95,7 +95,7 @@ public class order_mechanic extends AppCompatActivity {
         longitude=intent.getStringExtra("long");
         issue=intent.getStringExtra("issue");
 
-        if(String.valueOf(issue)=="0"){
+        if(String.valueOf(issue).equals("0")){
             problem="Tyre Puncture";
             base_cost=100;
         }

@@ -58,6 +58,9 @@
             android:name=".OrdersListActivity"
             android:exported="true" />
         <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".tow_truckActivity"
             android:exported="true" />
         <activity

@@ -35,6 +35,7 @@
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_order_details.xml" value="0.22" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_order_petrol.xml" value="0.22" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_orders.xml" value="0.25" />
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_orders_list.xml" value="0.17552083333333332" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_petrol.xml" value="0.22" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_petrol_map.xml" value="0.22" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_profile.xml" value="0.22" />
@@ -45,16 +46,6 @@
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/row_order_adv.xml" value="0.25" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/row_orders.xml" value="0.25" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/shape_6.xml" value="0.1671875" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_firstaid.xml" value="0.1" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_map.xml" value="0.17979610750695088" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_map_petrol.xml" value="0.17979610750695088" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_mechanic.xml" value="0.1" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_order_mechanic.xml" value="0.18426678067550234" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_order_petrol.xml" value="0.17979610750695088" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_orders.xml" value="0.17979610750695088" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_orders_list.xml" value="0.17979610750695088" />
-        <entry key="..\:/Demo/EaseMyRide/app/src/main/res/layout/activity_tow_truck.xml" value="0.1" />
         <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/email.xml" value="0.20092592592592592" />
         <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/email_white.xml" value="0.20092592592592592" />
         <entry key="..\:/EaseMyRideApp/EaseMyRide/app/src/main/res/drawable/menu_icon_foreground.xml" value="0.20555555555555555" />

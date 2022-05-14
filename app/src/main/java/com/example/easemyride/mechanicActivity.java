@@ -40,9 +40,9 @@ public class mechanicActivity extends AppCompatActivity {
         cv_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String issue="1";
+                issue="1";
                 Intent i = new Intent(mechanicActivity.this,mapActivity.class);
-                i.putExtra("issue",String.valueOf(issue));
+                i.putExtra("issue",issue);
                 startActivity(i);
             }
         });
