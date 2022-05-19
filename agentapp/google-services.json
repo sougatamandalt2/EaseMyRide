@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "394805610830",
+    "firebase_url": "https://easemyride-b0bce-default-rtdb.firebaseio.com",
+    "project_id": "easemyride-b0bce",
+    "storage_bucket": "easemyride-b0bce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394805610830:android:65a4ca53a173bc6af0b61f",
+        "android_client_info": {
+          "package_name": "com.example.agentapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394805610830-75uqe2ehj96qascl7sjm28jc2vdtl2hl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agentapp",
+            "certificate_hash": "65819dd667044c0df4ffa78c6c5c1d4025014c11"
+          }
+        },
+        {
+          "client_id": "394805610830-jkb7lmmer9e4sjemvqds9ns8676ut8kn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4BP7AbxyZf8mdSIz5eMOxgeNfZgbpQvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394805610830-jkb7lmmer9e4sjemvqds9ns8676ut8kn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394805610830:android:9e9380e87ada114af0b61f",
+        "android_client_info": {
+          "package_name": "com.example.easemyride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394805610830-amihg87r99e9jhac79jguahdu5v0r8d5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.easemyride",
+            "certificate_hash": "a4eed04c8f182bd6776170ce44da25ce3d5733be"
+          }
+        },
+        {
+          "client_id": "394805610830-jpv401atsdg71o6gqgg5i21s6f1al3e4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.easemyride",
+            "certificate_hash": "65819dd667044c0df4ffa78c6c5c1d4025014c11"
+          }
+        },
+        {
+          "client_id": "394805610830-jkb7lmmer9e4sjemvqds9ns8676ut8kn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4BP7AbxyZf8mdSIz5eMOxgeNfZgbpQvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394805610830-jkb7lmmer9e4sjemvqds9ns8676ut8kn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

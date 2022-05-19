@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">AgentApp</string>
+
+    <string name="facebook_app_id">5048461518544955</string>
+    <string name="fb_login_protocol_scheme">fb5048461518544955</string>
+    <string name="facebook_client_token">a03cc3424723e3f5a0dd5a8555b603dd</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="map_key" translatable="false">AIzaSyDovv2jiddBLyex9D0DGxqA6V1USfRBRds</string>
+
+    <string-array name="quantities">
+
+        <item>150</item>
+        <item>300</item>
+        <item>450</item>
+        <item>950</item>
+        <item>1450</item>
+
+    </string-array>
+
+    <string-array name="vehicle">
+
+        <item>2 Wheeler / Bike</item>
+        <item>3 Wheeler / Auto</item>
+        <item>4 Wheeler / Car</item>
+        <item>Bus / Track</item>
+
+    </string-array>
+
+</resources>

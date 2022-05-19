@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="rl_login" type="id" />
+    <item name="tv_forgetpassword" type="id" />
+    <item name="tv_newuser" type="id" />
+    <item name="btn_login" type="id" />
+    <item name="ll_phoneNo" type="id" />
+    <item name="edt_phone_code" type="id" />
+    <item name="edt_phone" type="id" />
+    <item name="ll_1" type="id" />
+    <item name="edt_1" type="id" />
+    <item name="edt_2" type="id" />
+    <item name="edt_3" type="id" />
+    <item name="edt_4" type="id" />
+    <item name="edt_5" type="id" />
+    <item name="edt_6" type="id" />
+    <item name="btn_generate" type="id" />
+    <item name="btn_submitOTP" type="id" />
+    <item name="tv_resend" type="id" />
+</resources>

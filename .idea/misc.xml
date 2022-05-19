@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/agentapp/src/main/res/drawable/about_black.xml" value="0.116" />
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/agentapp/src/main/res/drawable/line.xml" value="0.1" />
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/agentapp/src/main/res/layout/activity_agent_forget_password.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/agentapp/src/main/res/layout/activity_agent_homepage.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/agentapp/src/main/res/layout/activity_agent_login.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/agentapp/src/main/res/layout/activity_agent_resgistration.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/agentapp/src/main/res/layout/activity_agentmobile_verf.xml" value="0.17552083333333332" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/drawable/bag_black.xml" value="0.18333333333333332" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.19166666666666668" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/drawable/settings_black.xml" value="0.18333333333333332" />
@@ -26,6 +33,7 @@
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_cng.xml" value="0.1671875" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_diesel.xml" value="0.17222222222222222" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_edit_profile.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_forget_password.xml" value="0.17552083333333332" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_fuel.xml" value="0.2" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_homepage.xml" value="0.17552083333333332" />
         <entry key="..\:/Android Development/My Android Studio Projects  (JAVA)/EaseMyRide/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
