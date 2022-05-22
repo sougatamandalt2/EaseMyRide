@@ -104,11 +104,11 @@ public class OrderDetailsActivity extends AppCompatActivity {
                         else if(orderTitle.equals("diesel")){
                             iv_order.setImageResource(R.drawable.diesel);
                         }
-                        else if(orderTitle.equals("Mechanic")){
+                        else if(orderTitle.equals("JumpStart")){
                             iv_order.setImageResource(R.drawable.mechanic);
                         }
-                        else if(orderTitle.equals("CNG")){
-                            iv_order.setImageResource(R.drawable.cng);
+                        else if(orderTitle.equals("Tyre Puncture")){
+                            iv_order.setImageResource(R.drawable.tyre);
                         }
 
                         findAddress(latitude,longitude);

@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -74,6 +77,31 @@ public class AgentResgistrationActivity extends AppCompatActivity {
                 email=edt_email.getText().toString().trim();
                 password=edt_password.getText().toString().trim();
                 confpassword=edt_confPassword.getText().toString().trim();
+
+                if(TextUtils.isEmpty(name)){
+                    Toast.makeText(AgentResgistrationActivity.this, "Name field is empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(phone)){
+                    Toast.makeText(AgentResgistrationActivity.this, "Phone number field is empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    Toast.makeText(AgentResgistrationActivity.this, "Invalid email address", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(password.length()<8){
+                    Toast.makeText(AgentResgistrationActivity.this, "Password should contain at least 8 characters", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(!confpassword.equals(password)){
+                    Toast.makeText(AgentResgistrationActivity.this, "Passwords doesn't match", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 Intent i=new Intent(AgentResgistrationActivity.this,AgentmobileVerfActivity.class);
                 i.putExtra("name",name);

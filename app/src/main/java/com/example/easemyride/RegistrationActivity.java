@@ -74,6 +74,31 @@ public class RegistrationActivity extends AppCompatActivity {
                 password=edt_password.getText().toString().trim();
                 confpassword=edt_confPassword.getText().toString().trim();
 
+                if(TextUtils.isEmpty(name)){
+                    Toast.makeText(RegistrationActivity.this, "Name field is empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(phone)){
+                    Toast.makeText(RegistrationActivity.this, "Phone number field is empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    Toast.makeText(RegistrationActivity.this, "Invalid email address", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(password.length()<8){
+                    Toast.makeText(RegistrationActivity.this, "Password should contain at least 8 characters", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(!confpassword.equals(password)){
+                    Toast.makeText(RegistrationActivity.this, "Passwords doesn't match", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Intent i=new Intent(RegistrationActivity.this,MobileVerificationActivity.class);
                 i.putExtra("name",name);
                 i.putExtra("email",email);
