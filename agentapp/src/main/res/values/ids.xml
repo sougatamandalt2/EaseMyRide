@@ -17,4 +17,14 @@
     <item name="btn_generate" type="id" />
     <item name="btn_submitOTP" type="id" />
     <item name="tv_resend" type="id" />
+    <item name="rl_heading" type="id" />
+    <item name="iv_back" type="id" />
+    <item name="rl_map_head" type="id" />
+    <item name="fr_map" type="id" />
+    <item name="tv_address" type="id" />
+    <item name="btn_loc" type="id" />
+    <item name="ll_address" type="id" />
+    <item name="tv_city" type="id" />
+    <item name="tv_state" type="id" />
+    <item name="btn_next" type="id" />
 </resources>

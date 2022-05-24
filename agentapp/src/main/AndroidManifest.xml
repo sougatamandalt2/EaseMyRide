@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.agentapp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EaseMyRide">
+        <activity
+            android:name=".AgentOrderDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AgentOrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AgentMapActivity"
+            android:exported="false" />
         <activity
             android:name=".AgentHomepageActivity"
             android:exported="false" />
@@ -18,6 +32,11 @@
         <activity
             android:name=".AgentmobileVerfActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+
         <activity
             android:name=".AgentLoginActivity"
             android:exported="false" />

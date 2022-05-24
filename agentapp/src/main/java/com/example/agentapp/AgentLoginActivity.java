@@ -22,7 +22,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class AgentLoginActivity extends AppCompatActivity {
     private RelativeLayout rl_login;
@@ -159,7 +163,25 @@ public class AgentLoginActivity extends AppCompatActivity {
                     public void onSuccess(AuthResult authResult) {
                         progressDialog.dismiss();
 
-                        startActivity(new Intent(AgentLoginActivity.this,AgentHomepageActivity.class));
+                        DatabaseReference reference=FirebaseDatabase.getInstance().getReference("Agent");
+                        reference.child(firebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if(snapshot.exists()){
+                                    startActivity(new Intent(AgentLoginActivity.this,AgentHomepageActivity.class));
+                                }
+                                else{
+                                    Toast.makeText(AgentLoginActivity.this, "Incorrect email or password, try again", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

@@ -246,6 +246,7 @@ public class order_petrol_activity extends AppCompatActivity {
         hashMap.put("longitude",lon);
 
         final DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Customer").child(firebaseAuth.getUid()).child("Orders");
+        final DatabaseReference nref= FirebaseDatabase.getInstance().getReference("All Orders").child("Orders");
         reference.child(timeStamp).setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -282,6 +283,44 @@ public class order_petrol_activity extends AppCompatActivity {
                         Toast.makeText(order_petrol_activity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
+        nref.child(timeStamp).setValue(hashMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        for(int i=0;i<orderItemList.size();i++){
+                            String pId=orderItemList.get(i).getPid();
+                            String name=orderItemList.get(i).getName();
+                            String regNo=orderItemList.get(i).getRegNo();
+                            String cost=orderItemList.get(i).getTotalCost();
+
+                            HashMap<String,String > hashMap1=new HashMap<>();
+                            hashMap1.put("pId",pId);
+                            hashMap1.put("name",name);
+                            hashMap1.put("regNo",regNo);
+                            hashMap1.put("cost",cost);
+
+                            reference.child(timeStamp).child("items").child(pId).setValue(hashMap1);
+                        }
+                        progressDialog.dismiss();
+                        Toast.makeText(order_petrol_activity.this, "Order Placed....", Toast.LENGTH_SHORT).show();
+
+                        startActivity(new Intent(order_petrol_activity.this, OrdersListActivity.class));
+
+//                        Intent intent=new Intent(petrolActivity.this,OrderDetailsActivity.class);
+//                        intent.putExtra("orderTo",shopuid);
+//                        intent.putExtra("orderID",timeStamp);
+//                        startActivity(intent);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
+                        Toast.makeText(order_petrol_activity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
 
     }
 
